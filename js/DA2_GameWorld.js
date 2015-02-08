@@ -35,7 +35,7 @@ RPGGame.GameWorld.prototype = {
 		map.addTilesetImage('doors_udonly', 'doors_ud');
 		map.addTilesetImage('doors_lronly', 'doors_lr');
 		layer0 = map.createLayer('Layer0');
-		layer1 = map.createLayer('Layer1');
+		layer1 = map.createLayer('Layer1');d
 		layer2 = map.createLayer('Layer2');
 		layer0.resizeWorld();
 		
@@ -48,7 +48,7 @@ RPGGame.GameWorld.prototype = {
 		map.setCollision(9);
 		map.setCollision(14);
 		map.setCollision(16);
-		
+		this.game.camera.follow(catfriend);
     },
 
     update: function () {
@@ -85,9 +85,9 @@ RPGGame.GameWorld.prototype = {
 		{
 			//catfriend.body.moveDown(300);
 			catfriend.body.y += speed;
-			if(catfriend.frame === 2)
+			if(catfriend.animations.currentAnim === 'walkRight' || catfriend.frame === 2)
 				catfriend.animations.play('walkRight', 20, true);
-			else if(catfriend.frame === 0)
+			else if(catfriend.animations.currentAnim === 'walkLeft' || catfriend.frame === 1)
 				catfriend.animations.play('walkLeft', 20, true);
 		}
     },
