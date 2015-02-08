@@ -36,7 +36,7 @@ RPGGame.Preloader.prototype = {
 		this.load.image('opendoor2', 'assets/opendoor_2.png');
 		this.load.image('opendoor3', 'assets/opendoor_3.png');
 		this.load.image('opendoor4', 'assets/opendoor_4.png');
-		this.load.tilemap('map', 'assets/RPGDungeon.json', null, Phaser.Tilemap.TILED_JSON);
+		this.load.tilemap('map', 'assets/RPG_Dungeon.json', null, Phaser.Tilemap.TILED_JSON);
 		this.load.spritesheet('cat', 'assets/cat.png', 16, 16);
 		
 		//	+ lots of other required assets here

@@ -45,7 +45,7 @@ RPGGame.GameWorld.prototype = {
 			catfriend.body.moveLeft(300);
 			catfriend.animations.play('walkLeft', 20, true);
 		}
-		else if(game.input.keyboard.isDown(Phaser.Keyboard.D)
+		else if(game.input.keyboard.isDown(Phaser.Keyboard.D))
 		{
 			catfriend.body.moveRight(300);
 			catfriend.animations.play('walkRight', 20, true);

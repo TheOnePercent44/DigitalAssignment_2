@@ -24,7 +24,7 @@ RPGGame.GameBattle = function (game) {
 
 };
 
-RPGGame.Game.prototype = {
+RPGGame.GameBattle.prototype = {
 
     create: function () {
 
@@ -44,7 +44,7 @@ RPGGame.Game.prototype = {
         //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
 
         //  Then let's go back to the main menu.
-        this.state.start('MainMenu');
+        //this.state.start('MainMenu');
 
     }
 
