@@ -30,10 +30,6 @@ RPGGame.GameWorld.prototype = {
 	
     create: function () {
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
-		catfriend = this.game.add.sprite(10, 7, 'cat', 2);
-		this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
-		catfriend.animations.add('walkLeft', [1, 0]);
-		catfriend.animations.add('walkRight', [2, 3]);
 		map = this.game.add.tilemap('map');
 		map.addTilesetImage('stone_walls', 'stonewalls');
 		map.addTilesetImage('doors_udonly', 'doors_ud');
@@ -41,6 +37,12 @@ RPGGame.GameWorld.prototype = {
 		layer0 = map.createLayer('Layer0');
 		layer1 = map.createLayer('Layer1');
 		layer2 = map.createLayer('Layer2');
+		layer0.resizeWorld();
+		
+		catfriend = this.game.add.sprite(10, 7, 'cat', 2);
+		this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
+		catfriend.animations.add('walkLeft', [1, 0]);
+		catfriend.animations.add('walkRight', [2, 3]);
 		//this.game.physics.collide(catfriend, layer1);
 		map.setCollision(3);
 		map.setCollision(9);
