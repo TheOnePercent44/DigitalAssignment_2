@@ -1,10 +1,10 @@
-var BasicGame = {};
+var RPGGame = {};
 
-BasicGame.Boot = function (game) {
+RPGGame.Boot = function (game) {
 
 };
 
-BasicGame.Boot.prototype = {
+RPGGame.Boot.prototype = {
 
     init: function () {
 
@@ -24,7 +24,7 @@ BasicGame.Boot.prototype = {
             //  Same goes for mobile settings.
             //  In this case we're saying "scale the game, no lower than 480x260 and no higher than 1024x768"
             this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-            this.scale.setMinMax(480, 260, 1024, 768);
+            this.scale.setMinMax(480, 260, 1024, 1024);
             this.scale.forceLandscape = true;
             this.scale.pageAlignHorizontally = true;
         }
@@ -34,8 +34,8 @@ BasicGame.Boot.prototype = {
     preload: function () {
 
         //  Here we load the assets required for our preloader (in this case a background and a loading bar)
-        this.load.image('preloaderBackground', 'images/preloader_background.jpg');
-        this.load.image('preloaderBar', 'images/preloadr_bar.png');
+        //this.load.image('preloaderBackground', 'images/preloader_background.jpg');
+        //this.load.image('preloaderBar', 'images/preloadr_bar.png');
 
     },
 
@@ -47,4 +47,19 @@ BasicGame.Boot.prototype = {
 
     }
 
+};
+
+window.onload = function() {
+	//	Create your Phaser game and inject it into the gameContainer div.
+	//	We did it in a window.onload event, but you can do it anywhere (requireJS load, anonymous function, jQuery dom ready, - whatever floats your boat)
+	var game = new Phaser.Game(800, 800, Phaser.AUTO, 'game');
+	//	Add the States your game has.
+	//	You don't have to do this in the html, it could be done in your Boot state too, but for simplicity I'll keep it here.
+	game.state.add('Boot', RPGGame.Boot);
+	game.state.add('Preloader', RPGGame.Preloader);
+	game.state.add('MainMenu', RPGGame.MainMenu);
+	game.state.add('GameWorld', RPGGame.GameWorld);
+	game.state.add('GameBattle', RPGGame.GameBattle);
+	//	Now start the Boot state.
+	game.state.start('Boot');
 };
