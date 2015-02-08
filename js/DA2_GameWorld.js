@@ -30,7 +30,7 @@ RPGGame.GameWorld.prototype = {
     create: function () {
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
 		var catfriend, map, layer0, layer1, layer2;
-		catfriend = game.add.sprite(10, 7, 'cat', 2);
+		catfriend = this.game.add.sprite(10, 7, 'cat', 2);
 		game.physics.startSystem(Phaser.Physics.Arcade);
 		game.physics.arcade.enable(catfriend);
 		catfriend.animations.add('walkLeft', [1, 0]);
