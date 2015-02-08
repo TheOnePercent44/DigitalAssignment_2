@@ -24,11 +24,12 @@ RPGGame.GameWorld = function (game) {
 
 };
 
-RPGGame.Game.prototype = {
+RPGGame.GameWorld.prototype = {
 	
-	var catfriend, map, layer0, layer1, layer2;
+	
     create: function () {
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
+		var catfriend, map, layer0, layer1, layer2;
 		catfriend = game.add.sprite(game, 10, 7, 'cat', 2);
 		game.physics.startSystem(Phaser.Physics.Arcade);
 		game.physics.arcade.enable(catfriend);
@@ -79,7 +80,7 @@ RPGGame.Game.prototype = {
         //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
 
         //  Then let's go back to the main menu.
-        this.state.start('MainMenu');
+        //this.state.start('MainMenu');
 
     }
 
