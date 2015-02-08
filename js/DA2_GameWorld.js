@@ -82,6 +82,7 @@ RPGGame.GameWorld.prototype = {
 		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.S))
 		{
 			//catfriend.body.moveDown(300);
+			catfriend.body.y += speed;
 			if(catfriend.animations.currentAnim == null)
 			{
 				if(catfriend.frame === 2)
