@@ -41,7 +41,7 @@ RPGGame.GameWorld.prototype = {
 		layer0 = map.createLayer('Layer0');
 		layer1 = map.createLayer('Layer1');
 		layer2 = map.createLayer('Layer2');
-		this.game.physics.collide(catfriend, layer1);
+		//this.game.physics.collide(catfriend, layer1);
 		map.setCollision(3);
 		map.setCollision(9);
 		map.setCollision(14);
