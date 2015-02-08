@@ -85,10 +85,22 @@ RPGGame.GameWorld.prototype = {
 		{
 			//catfriend.body.moveDown(300);
 			catfriend.body.y += speed;
-			if(catfriend.animations.currentAnim === 'walkRight' || catfriend.frame === 2)
-				catfriend.animations.play('walkRight', 20, true);
-			else if(catfriend.animations.currentAnim === 'walkLeft' || catfriend.frame === 1)
-				catfriend.animations.play('walkLeft', 20, true);
+			if(catfriend.currentAnim === null)
+			{
+				if(catfriend.frame === 2)
+					catfriend.animations.play('walkRight', 20, true);
+				else if(catfriend.frame === 1)
+					catfriend.animations.play('walkLeft', 20, true);
+			}
+			else
+			{
+				//let the a/d keys handle it?
+			}
+		}
+		else
+		{
+			if(!(this.game.input.keyboard.isDown(Phaser.Keyboard.A) || this.game.input.keyboard.isDown(Phaser.Keyboard.D)))
+				catfriend.animations.stop(null, true);
 		}
     },
 
