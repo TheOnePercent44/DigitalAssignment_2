@@ -25,6 +25,7 @@ RPGGame.GameWorld = function (game) {
 };
 
 var catfriend, map, layer0, layer1, layer2;
+var speed = 4;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
@@ -59,12 +60,14 @@ RPGGame.GameWorld.prototype = {
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
 		if(this.game.input.keyboard.isDown(Phaser.Keyboard.A))
 		{
-			catfriend.body.moveLeft(300);
+			//catfriend.body.moveLeft(300);
+			catfriend.body.x -= speed;
 			catfriend.animations.play('walkLeft', 20, true);
 		}
 		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.D))
 		{
-			catfriend.body.moveRight(300);
+			//catfriend.body.moveRight(300);
+			catfriend.body.x += speed;
 			catfriend.animations.play('walkRight', 20, true);
 		}
 		else
@@ -75,7 +78,8 @@ RPGGame.GameWorld.prototype = {
 		
 		if(this.game.input.keyboard.isDown(Phaser.Keyboard.W))
 		{
-			catfriend.body.moveUp(300);
+			//catfriend.body.moveUp(300);
+			catfriend.body.y -= speed;
 			if(catfriend.frame === 2)
 				catfriend.animations.play('walkRight', 20, true);
 			else if(catfriend.frame === 0)
@@ -83,7 +87,8 @@ RPGGame.GameWorld.prototype = {
 		}
 		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.S))
 		{
-			catfriend.body.moveDown(300);
+			//catfriend.body.moveDown(300);
+			catfriend.body.y += speed;
 			if(catfriend.frame === 2)
 				catfriend.animations.play('walkRight', 20, true);
 			else if(catfriend.frame === 0)
