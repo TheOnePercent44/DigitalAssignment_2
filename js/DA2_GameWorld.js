@@ -31,7 +31,7 @@ RPGGame.GameWorld.prototype = {
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
 		var catfriend, map, layer0, layer1, layer2;
 		catfriend = this.game.add.sprite(10, 7, 'cat', 2);
-		game.physics.enable(catfriend, Phaser.Physics.ARCADE);
+		this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
 		catfriend.animations.add('walkLeft', [1, 0]);
 		catfriend.animations.add('walkRight', [2, 3]);
     },
@@ -39,23 +39,23 @@ RPGGame.GameWorld.prototype = {
     update: function () {
 
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
-		if(game.input.keyboard.isDown(Phaser.Keyboard.A))
+		if(this.game.input.keyboard.isDown(Phaser.Keyboard.A))
 		{
 			catfriend.body.moveLeft(300);
 			catfriend.animations.play('walkLeft', 20, true);
 		}
-		else if(game.input.keyboard.isDown(Phaser.Keyboard.D))
+		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.D))
 		{
 			catfriend.body.moveRight(300);
 			catfriend.animations.play('walkRight', 20, true);
 		}
 		else
 		{
-			if(!(game.input.keyboard.isDown(Phaser.Keyboard.W) || game.input.keyboard.isDown(Phaser.Keyboard.S)))
+			if(!(this.game.input.keyboard.isDown(Phaser.Keyboard.W) || this.game.input.keyboard.isDown(Phaser.Keyboard.S)))
 				catfriend.animations.stop(null, true);
 		}
 		
-		if(game.input.keyboard.isDown(Phaser.Keyboard.W))
+		if(this.game.input.keyboard.isDown(Phaser.Keyboard.W))
 		{
 			catfriend.body.moveUp(300);
 			if(catfriend.frame === 2)
@@ -63,7 +63,7 @@ RPGGame.GameWorld.prototype = {
 			else if(catfriend.frame === 0)
 				catfriend.animations.play('walkLeft', 20, true);
 		}
-		else if(game.input.keyboard.isDown(Phaser.Keyboard.S))
+		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.S))
 		{
 			catfriend.body.moveDown(300);
 			if(catfriend.frame === 2)
