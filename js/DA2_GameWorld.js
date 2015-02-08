@@ -65,48 +65,28 @@ RPGGame.GameWorld.prototype = {
 			//catfriend.body.moveRight(300);
 			catfriend.body.x += speed;
 			catfriend.animations.play('walkRight', 20, true);
-		}
-		else
-		{
-			if(!(this.game.input.keyboard.isDown(Phaser.Keyboard.W) || this.game.input.keyboard.isDown(Phaser.Keyboard.S)))
-				catfriend.animations.stop(null, true);
-		}
-		
-		if(this.game.input.keyboard.isDown(Phaser.Keyboard.W))
+		}		
+		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.W))
 		{
 			//catfriend.body.moveUp(300);
-			if(catfriend.currentAnim == null)
-			{
-				if(catfriend.frame === 2)
-					catfriend.animations.play('walkRight', 20, true);
-				else
-					catfriend.animations.play('walkLeft', 20, true);
-			}
+			catfriend.body.y -= speed;
+			if(catfriend.frame === 2)
+				catfriend.animations.play('walkRight', 20, true);
 			else
-			{
-				//let the a/d keys handle it?
-			}
+				catfriend.animations.play('walkLeft', 20, true);
 		}
 		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.S))
 		{
 			//catfriend.body.moveDown(300);
 			catfriend.body.y += speed;
-			if(catfriend.currentAnim == null)
-			{
-				if(catfriend.frame === 2)
-					catfriend.animations.play('walkRight', 20, true);
-				else
-					catfriend.animations.play('walkLeft', 20, true);
-			}
+			if(catfriend.frame === 2)
+				catfriend.animations.play('walkRight', 20, true);
 			else
-			{
-				//let the a/d keys handle it?
-			}
+				catfriend.animations.play('walkLeft', 20, true);
 		}
 		else
 		{
-			if(!(this.game.input.keyboard.isDown(Phaser.Keyboard.A) || this.game.input.keyboard.isDown(Phaser.Keyboard.D)))
-				catfriend.animations.stop(null, true);
+			catfriend.animations.stop(null, true);
 		}
     },
 
