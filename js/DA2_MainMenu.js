@@ -1,11 +1,11 @@
-BasicGame.MainMenu = function (game) {
+RPGGame.MainMenu = function (game) {
 
 	this.music = null;
 	this.playButton = null;
 
 };
 
-BasicGame.MainMenu.prototype = {
+RPGGame.MainMenu.prototype = {
 
 	create: function () {
 
