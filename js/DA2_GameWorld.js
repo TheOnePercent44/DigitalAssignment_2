@@ -35,11 +35,11 @@ RPGGame.GameWorld.prototype = {
 		map.addTilesetImage('doors_udonly', 'doors_ud');
 		map.addTilesetImage('doors_lronly', 'doors_lr');
 		layer0 = map.createLayer('Layer0');
-		layer1 = map.createLayer('Layer1');d
+		layer1 = map.createLayer('Layer1');
 		layer2 = map.createLayer('Layer2');
 		layer0.resizeWorld();
 		
-		catfriend = this.game.add.sprite(10, 7, 'cat', 2);
+		catfriend = this.game.add.sprite(10, 15, 'cat', 2);
 		this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
 		catfriend.animations.add('walkLeft', [1, 0]);
 		catfriend.animations.add('walkRight', [2, 3]);
