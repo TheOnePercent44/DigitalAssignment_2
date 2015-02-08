@@ -36,17 +36,17 @@ RPGGame.GameWorld.prototype = {
 		catfriend.animations.add('walkRight', [2, 3]);
 		map = this.game.add.tilemap('map');
 		map.addTilesetImage('stone_walls', 'stonewalls');
-		map.addTilesetImage('doors', 'closeddoor1');
+		/*map.addTilesetImage('doors', 'closeddoor1');
 		map.addTilesetImage('doors', 'closeddoor2');
 		map.addTilesetImage('doors', 'closeddoor3');
 		map.addTilesetImage('doors', 'closeddoor4');
 		map.addTilesetImage('doors', 'opendoor1');
 		map.addTilesetImage('doors', 'opendoor2');
 		map.addTilesetImage('doors', 'opendoor3');
-		map.addTilesetImage('doors', 'opendoor4');
+		map.addTilesetImage('doors', 'opendoor4');*/
 		layer0 = map.createLayer('Layer0');
 		layer1 = map.createLayer('Layer1');
-		layer2 = map.createLayer('Layer2');
+		//layer2 = map.createLayer('Layer2');
 		this.game.physics.collide(catfriend, layer1);
 		map.setCollision(3);
 		map.setCollision(9);
