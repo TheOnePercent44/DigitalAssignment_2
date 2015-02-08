@@ -39,7 +39,7 @@ RPGGame.GameWorld.prototype = {
 		layer2 = map.createLayer('Layer2');
 		layer0.resizeWorld();
 		
-		catfriend = this.game.add.sprite(10, 15, 'cat', 2);
+		catfriend = this.game.add.sprite(10, 20, 'cat', 2);
 		this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
 		catfriend.animations.add('walkLeft', [1, 0]);
 		catfriend.animations.add('walkRight', [2, 3]);
@@ -70,19 +70,26 @@ RPGGame.GameWorld.prototype = {
 		{
 			//catfriend.body.moveUp(300);
 			catfriend.body.y -= speed;
-			if(catfriend.frame === 2)
-				catfriend.animations.play('walkRight', 20, true);
-			else
-				catfriend.animations.play('walkLeft', 20, true);
+			if(catfriend.animations.currentAnim == null)
+			{
+				if(catfriend.frame === 2)
+					catfriend.animations.play('walkRight', 20, true);
+				else
+					catfriend.animations.play('walkLeft', 20, true);
+			}
+			else{}//let the anim play
 		}
 		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.S))
 		{
 			//catfriend.body.moveDown(300);
-			catfriend.body.y += speed;
-			if(catfriend.frame === 2)
-				catfriend.animations.play('walkRight', 20, true);
-			else
-				catfriend.animations.play('walkLeft', 20, true);
+			if(catfriend.animations.currentAnim == null)
+			{
+				if(catfriend.frame === 2)
+					catfriend.animations.play('walkRight', 20, true);
+				else
+					catfriend.animations.play('walkLeft', 20, true);
+			}
+			else{}//let the anim play
 		}
 		else
 		{
