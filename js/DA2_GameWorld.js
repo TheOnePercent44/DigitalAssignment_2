@@ -85,7 +85,7 @@ RPGGame.GameWorld.prototype = {
 		{
 			//catfriend.body.moveDown(300);
 			catfriend.body.y += speed;
-			if(catfriend.currentAnim === null)
+			if(catfriend.currentAnim == null)
 			{
 				if(catfriend.frame === 2)
 					catfriend.animations.play('walkRight', 20, true);
