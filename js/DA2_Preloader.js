@@ -28,14 +28,8 @@ RPGGame.Preloader.prototype = {
 		this.load.audio('titleMusic', ['audio/main_menu.mp3']);
 		this.load.bitmapFont('caslon', 'fonts/caslon.png', 'fonts/caslon.xml');*/
 		this.load.image('stonewalls', 'assets/s_walls_only.png');
-		this.load.image('closeddoor1', 'assets/closeddoor_1.png');
-		this.load.image('closeddoor2', 'assets/closeddoor_2.png');
-		this.load.image('closeddoor3', 'assets/closeddoor_3.png');
-		this.load.image('closeddoor4', 'assets/closeddoor_4.png');
-		this.load.image('opendoor1', 'assets/opendoor_1.png');
-		this.load.image('opendoor2', 'assets/opendoor_2.png');
-		this.load.image('opendoor3', 'assets/opendoor_3.png');
-		this.load.image('opendoor4', 'assets/opendoor_4.png');
+		this.load.image('doors_ud', 'assets/s_doors_udonly.png');
+		this.load.image('doors_lr', 'assets/s_doors_lronly.png');
 		this.load.tilemap('map', 'assets/RPG_Dungeon.json', null, Phaser.Tilemap.TILED_JSON);
 		this.load.spritesheet('cat', 'assets/cat.png', 16, 16);
 		

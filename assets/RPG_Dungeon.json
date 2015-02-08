@@ -59,68 +59,32 @@
         }, 
         {
          "firstgid":33,
+         "image":"..\/..\/..\/..\/Documents\/Github\/DigitalAssignment_2\/assets\/s_doors_lronly.png",
+         "imageheight":44,
+         "imagewidth":32,
          "margin":0,
-         "name":"doors",
+         "name":"doors_lr",
          "properties":
             {
 
             },
          "spacing":0,
          "tileheight":22,
-         "tileproperties":
+         "tilewidth":16
+        }, 
+        {
+         "firstgid":37,
+         "image":"..\/..\/..\/..\/Documents\/Github\/DigitalAssignment_2\/assets\/s_doors_udonly.png",
+         "imageheight":32,
+         "imagewidth":46,
+         "margin":0,
+         "name":"doors_ud",
+         "properties":
             {
-             "0":
-                {
-                 "isLocked":"true"
-                },
-             "1":
-                {
-                 "isLocked":"true"
-                },
-             "2":
-                {
-                 "isLocked":"true"
-                },
-             "3":
-                {
-                 "isLocked":"true"
-                }
+
             },
-         "tiles":
-            {
-             "0":
-                {
-                 "image":"..\/..\/..\/..\/Documents\/Github\/DigitalAssignment_2\/assets\/closeddoor_1.png"
-                },
-             "1":
-                {
-                 "image":"..\/..\/..\/..\/Documents\/Github\/DigitalAssignment_2\/assets\/closeddoor_2.png"
-                },
-             "2":
-                {
-                 "image":"..\/..\/..\/..\/Documents\/Github\/DigitalAssignment_2\/assets\/closeddoor_3.png"
-                },
-             "3":
-                {
-                 "image":"..\/..\/..\/..\/Documents\/Github\/DigitalAssignment_2\/assets\/closeddoor_4.png"
-                },
-             "4":
-                {
-                 "image":"..\/..\/..\/..\/Documents\/Github\/DigitalAssignment_2\/assets\/opendoor_1.png"
-                },
-             "5":
-                {
-                 "image":"..\/..\/..\/..\/Documents\/Github\/DigitalAssignment_2\/assets\/opendoor_2.png"
-                },
-             "6":
-                {
-                 "image":"..\/..\/..\/..\/Documents\/Github\/DigitalAssignment_2\/assets\/opendoor_3.png"
-                },
-             "7":
-                {
-                 "image":"..\/..\/..\/..\/Documents\/Github\/DigitalAssignment_2\/assets\/opendoor_4.png"
-                }
-            },
+         "spacing":0,
+         "tileheight":16,
          "tilewidth":23
         }],
  "tilewidth":8,
