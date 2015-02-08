@@ -36,8 +36,8 @@ RPGGame.GameWorld.prototype = {
 		catfriend.animations.add('walkRight', [2, 3]);
 		map = this.game.add.tilemap('map');
 		map.addTilesetImage('stone_walls', 'stonewalls');
-		map.addTilesetImage('doors_ud', 'doors_ud');
-		map.addTilesetImage('doors_lr', 'doors_lr');
+		map.addTilesetImage('doors_udonly', 'doors_ud');
+		map.addTilesetImage('doors_lronly', 'doors_lr');
 		layer0 = map.createLayer('Layer0');
 		layer1 = map.createLayer('Layer1');
 		layer2 = map.createLayer('Layer2');
