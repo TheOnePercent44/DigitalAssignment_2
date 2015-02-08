@@ -83,14 +83,10 @@ RPGGame.GameWorld.prototype = {
 		{
 			//catfriend.body.moveDown(300);
 			catfriend.body.y += speed;
-			if(catfriend.animations.currentAnim == null)
-			{
-				if(catfriend.frame === 2)
-					catfriend.animations.play('walkRight', 20, true);
-				else
-					catfriend.animations.play('walkLeft', 20, true);
-			}
-			else{}//let the anim play
+			if(catfriend.frame === 2 || catfriend.frame === 3)
+				catfriend.animations.play('walkRight', 20, true);
+			else
+				catfriend.animations.play('walkLeft', 20, true);
 		}
 		else
 		{
