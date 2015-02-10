@@ -51,8 +51,8 @@ RPGGame.GameWorld.prototype = {
 		map.setCollision(14);
 		map.setCollision(16);*/
 		map.setCollision([3, 9, 14, 16], true, layer1);
-		this.game.camera.setSize(100, 100);
-		this.game.camera.follow(catfriend);
+		/*this.game.camera.setSize(100, 100);
+		this.game.camera.follow(catfriend);*/
     },
 
     update: function () {
