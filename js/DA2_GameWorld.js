@@ -86,7 +86,7 @@ RPGGame.GameWorld.prototype = {
 		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hopefull');
 		hopebar.cropEnabled = true;
 		HOPEMAX = 500;
-		hope = (int)HOPEMAX*0.68;
+		hope = 325;//HOPEMAX;
 		console.log("width: %d, Height: %d", hopebar.width, hopebar.height);//debug
 		//var cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
 		hopebar.crop = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
