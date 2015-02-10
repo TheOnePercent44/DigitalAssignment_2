@@ -32,8 +32,155 @@
          "width":100,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "height":100,
+         "name":"CollisionLayer",
+         "objects":[
+                {
+                 "height":12.6666666666667,
+                 "id":1,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":246,
+                 "x":16.6666666666667,
+                 "y":106
+                }, 
+                {
+                 "height":161.333333333333,
+                 "id":2,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":14.6666666666666,
+                 "x":248,
+                 "y":119.333333333333
+                }, 
+                {
+                 "height":16,
+                 "id":6,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":82,
+                 "x":264,
+                 "y":264.666666666667
+                }, 
+                {
+                 "height":15.3333333333334,
+                 "id":8,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":112,
+                 "x":392,
+                 "y":264.666666666667
+                }, 
+                {
+                 "height":248.666666666667,
+                 "id":10,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":488,
+                 "y":16
+                }, 
+                {
+                 "height":14.6666666666667,
+                 "id":12,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":804.666666666667,
+                 "x":0.666666666666667,
+                 "y":0.666666666666667
+                }, 
+                {
+                 "height":782.666666666667,
+                 "id":13,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":14,
+                 "x":0,
+                 "y":15.3333333333333
+                }, 
+                {
+                 "height":15.3333333333333,
+                 "id":14,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":793.333333333333,
+                 "x":14.6666666666667,
+                 "y":784
+                }, 
+                {
+                 "height":766,
+                 "id":15,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":15.3333333333334,
+                 "x":791.333333333333,
+                 "y":16.6666666666667
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":100,
+         "x":0,
+         "y":0
         }],
- "nextobjectid":1,
+ "nextobjectid":16,
  "orientation":"orthogonal",
  "properties":
     {
