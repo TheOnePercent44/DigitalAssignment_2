@@ -96,7 +96,7 @@ RPGGame.GameWorld.prototype = {
 		this.game.physics.arcade.collide(catfriend.body, layer1);
 		if(this.game.time.now-time1 > 3000)
 			hope -= 20;
-		//console.log("hope %d", hope);
+		console.log("hope %d", hope);
 		if(hope <= 0)
 			hope = 0;//also end the game
 		hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
