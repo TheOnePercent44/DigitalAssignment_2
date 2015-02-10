@@ -91,7 +91,7 @@ RPGGame.GameWorld.prototype = {
 		//hopebar.crop(cropbox);
 		hopebar.cropRect = cropbox;
 		//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
-		//hopebar.updateCrop();
+		hopebar.updateCrop();
 		time1 = this.game.time.now;
     },
 
