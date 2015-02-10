@@ -61,7 +61,7 @@ RPGGame.GameWorld.prototype = {
 		catfriend.animations.add('walkRight', [2, 3]);
 		//this.game.physics.arcade.collide(catfriend, layer1);
 		//this.game.physics.arcade.TILE_BIAS = 50;
-		this.game.camera.setSize(100, 100);
+		//this.game.camera.setSize(100, 100);
 		//this.game.camera.bounds = new Phaser.Rectangle(0, 0, 100,100);
 		this.game.camera.follow(catfriend, this.game.camera.FOLLOW_TOPDOWN_TIGHT);
 		//this.game.camera.update();
