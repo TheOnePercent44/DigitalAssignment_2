@@ -48,7 +48,7 @@ RPGGame.GameWorld.prototype = {
 		//this.game.physics.arcade.collide(catfriend, layer1);
 		this.game.physics.p2js.TILE_BIAS = 40;
 		this.game.physics.p2js.collide(catfriend, layer1);
-		map.setCollision(, true, layer1);
+		//map.setCollision(, true, layer1);
 		/*this.game.camera.setSize(100, 100);
 		this.game.camera.follow(catfriend);*/
     },
