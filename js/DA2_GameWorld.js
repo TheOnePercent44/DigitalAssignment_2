@@ -40,11 +40,11 @@ RPGGame.GameWorld.prototype = {
 		map.addTilesetImage('doors_udonly', 'doors_ud');
 		map.addTilesetImage('doors_lronly', 'doors_lr');
 		layer0 = map.createLayer('Layer0');
-		layer2 = map.createLayer('Layer2');
 		layer1 = map.createLayer('Layer1');
+		layer2 = map.createLayer('Layer2');
+		layer0.resizeWorld();
 		catfriend = this.game.add.sprite(15, 23, 'cat', 2);
 		//CollisionLayer = map.createLayer('CollisionLayer');
-		layer0.resizeWorld();
 		
 		this.game.physics.arcade.enable(catfriend);
 		catfriend.anchor.setTo(0.5, 0.5);
