@@ -106,7 +106,7 @@ RPGGame.GameWorld.prototype = {
 			hope -= 20;
 			//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 			//hopebar.updateCrop();
-			//add new thing here
+			hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
 			time1 = this.game.time.now;
 		}
 		console.log("hope %d", hope);
