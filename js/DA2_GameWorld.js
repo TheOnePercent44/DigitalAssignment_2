@@ -84,15 +84,17 @@ RPGGame.GameWorld.prototype = {
 		
 		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.10, 'hopeempty');
 		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hopefull');
+		hopebar.cropEnabled = true;
 		HOPEMAX = 500;
 		hope = HOPEMAX;
 		console.log("width: %d, Height: %d", hopebar.width, hopebar.height);//debug
 		var cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
+		hopebar.crop = cropbox;
 		//hopebar.crop(cropbox);
-		hopebar.cropRect = cropbox;
+		//hopebar.cropRect = cropbox;
 		hopebar.crop = hopebar.crop;
 		//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
-		hopebar.updateCrop();
+		//hopebar.updateCrop();
 		time1 = this.game.time.now;
     },
 
@@ -104,6 +106,7 @@ RPGGame.GameWorld.prototype = {
 			hope -= 20;
 			//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 			//hopebar.updateCrop();
+			//add new thing here
 			time1 = this.game.time.now;
 		}
 		console.log("hope %d", hope);
