@@ -91,6 +91,9 @@ RPGGame.GameWorld.prototype = {
 
     update: function () {
 		this.game.physics.arcade.collide(catfriend.body, layer1);
+		hope -= 20;
+		if(hope <= 0)
+			hope = 0;//also end the game
 		//this.game.physics.p2.collide(playerCG, wallsCG);//invalid function
 		
 		if(this.game.input.keyboard.isDown(Phaser.Keyboard.A))
