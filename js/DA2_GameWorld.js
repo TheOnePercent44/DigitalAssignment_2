@@ -25,7 +25,7 @@ RPGGame.GameWorld = function (game) {
 };
 
 var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer, wallsCG, playerCG;
-var speed = 2, hope, HOPEMAX, courage, COURAGEMAX, hopebar;
+var speed = 2, hope, HOPEMAX, courage, COURAGEMAX, hopebar, hopeback;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
@@ -81,8 +81,8 @@ RPGGame.GameWorld.prototype = {
 			collectioncats.add(newCat(this.game));
 		}
 		
-		this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.20, 'hopeempty');
-		hopebar = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.hegith*0.20, 'hopefull');
+		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.20, 'hopeempty');
+		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hopefull');
 		HOPEMAX = 500;
 		hope = HOPEMAX;
 		hopebar.cropEnabled = true;
