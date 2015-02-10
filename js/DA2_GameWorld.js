@@ -86,8 +86,8 @@ RPGGame.GameWorld.prototype = {
 		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hopefull');
 		HOPEMAX = 500;
 		hope = HOPEMAX;
-		var cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
-		hopebar.crop(cropbox);
+		//var cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
+		//hopebar.crop(cropbox);
 		//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 		//hopebar.updateCrop();
 		time1 = this.game.time.now;
@@ -98,13 +98,14 @@ RPGGame.GameWorld.prototype = {
 		if(this.game.time.now-time1 > 3000)
 		{
 			hope -= 20;
+			//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
+			//hopebar.updateCrop();
 			time1 = this.game.time.now;
 		}
 		console.log("hope %d", hope);
 		if(hope <= 0)
 			hope = 0;//also end the game
-		hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
-		hopebar.updateCrop();
+		
 		//this.game.physics.p2.collide(playerCG, wallsCG);//invalid function
 		
 		if(this.game.input.keyboard.isDown(Phaser.Keyboard.A))
