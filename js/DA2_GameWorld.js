@@ -30,8 +30,9 @@ var time1, cropbox;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
-		this.game.physics.startSystem(Phaser.Physics.P2JS);
-		//this.game.physics.startSystem(Phaser.Physics.ARCADE);
+		this.game.world.setBounds(-2000, -2000, 4000, 4000);
+		//this.game.physics.startSystem(Phaser.Physics.P2JS);
+		this.game.physics.startSystem(Phaser.Physics.ARCADE);
 		//this.game.physics.p2.setImpactEvents(true);
 		//wallsCG = this.game.physics.p2.createCollisionGroup();
 		//playerCG = this.game.physics.p2.createCollisionGroup();
@@ -43,7 +44,7 @@ RPGGame.GameWorld.prototype = {
 		layer0 = map.createLayer('Layer0');
 		layer1 = map.createLayer('Layer1');
 		layer2 = map.createLayer('Layer2');
-		layer1.resizeWorld();
+		//layer1.resizeWorld();
 		catfriend = this.game.add.sprite(30, 30, 'cat', 2);
 		//CollisionLayer = map.createLayer('Layer3');
 		
@@ -61,7 +62,7 @@ RPGGame.GameWorld.prototype = {
 		//this.game.physics.arcade.collide(catfriend, layer1);
 		//this.game.physics.arcade.TILE_BIAS = 50;
 		this.game.camera.setSize(100, 100);
-		this.game.camera.bounds = new Phaser.Rectangle(0, 0, 100,100);
+		//this.game.camera.bounds = new Phaser.Rectangle(0, 0, 100,100);
 		this.game.camera.follow(catfriend, this.game.camera.FOLLOW_TOPDOWN_TIGHT);
 		//this.game.camera.update();
 		
