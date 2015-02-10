@@ -86,7 +86,7 @@ RPGGame.GameWorld.prototype = {
 		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hopefull');
 		HOPEMAX = 500;
 		hope = HOPEMAX;
-		hopebar.crop(new Phaser.Rectangle(hopeback.x, hopeback.y, hopebar.width, hopebar.height));
+		hopebar.crop(new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height), true);
 		hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 		hopebar.updateCrop();
 		time1 = this.game.time.now;
@@ -95,7 +95,10 @@ RPGGame.GameWorld.prototype = {
     update: function () {
 		this.game.physics.arcade.collide(catfriend.body, layer1);
 		if(this.game.time.now-time1 > 3000)
+		{
 			hope -= 20;
+			time1 = this.game.time.now;
+		}
 		console.log("hope %d", hope);
 		if(hope <= 0)
 			hope = 0;//also end the game
