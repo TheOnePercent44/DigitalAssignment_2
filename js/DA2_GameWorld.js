@@ -139,7 +139,7 @@ function newCat(game)
 		meowcat.reset(xcoord, ycoord);
 	}
 	meowcat.animations.add('jumpRight', [2, 3]);
-	meowcat.animations.,play('jumpRight', 20, true);
+	meowcat.animations.play('jumpRight', 20, true);
 	
 	return meowcat;
 };
