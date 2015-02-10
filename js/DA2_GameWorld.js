@@ -53,12 +53,12 @@ RPGGame.GameWorld.prototype = {
 		//this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
 		//map.setCollision([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31], true, layer1, true);
 		//map.setCollisionByExclusion([0, 18], true, layer1);
-		map.setCollisionBetween(1, 40, true, 'Layer1');
+		map.setCollisionBetween(1, 40, true, 'Layer1', true);
 		//this.game.physics.p2.enable(catfriend);
 		catfriend.animations.add('walkLeft', [1, 0]);
 		catfriend.animations.add('walkRight', [2, 3]);
 		//this.game.physics.arcade.collide(catfriend, layer1);
-		this.game.physics.arcade.TILE_BIAS = 100;
+		this.game.physics.arcade.TILE_BIAS = 50;
 		//this.game.physics.p2js.TILE_BIAS = 40;
 		//this.game.physics.p2js.collide(catfriend, layer1);
 		/*this.game.camera.setSize(100, 100);
