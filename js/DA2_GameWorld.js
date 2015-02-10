@@ -25,7 +25,7 @@ RPGGame.GameWorld = function (game) {
 };
 
 var catfriend, map, layer0, layer1, layer2;
-var speed = 4;
+var speed = 2;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
@@ -74,19 +74,13 @@ RPGGame.GameWorld.prototype = {
 		{
 			//catfriend.body.moveUp(300);
 			catfriend.body.y -= speed;
-			if(catfriend.frame === 2 || catfriend.frame === 3)
-				catfriend.animations.play('walkRight', 20, true);
-			else
-				catfriend.animations.play('walkLeft', 20, true);
+			catfriend.animations.play('walkLeft', 20, true);
 		}
 		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.S))
 		{
 			//catfriend.body.moveDown(300);
 			catfriend.body.y += speed;
-			if(catfriend.frame === 2 || catfriend.frame === 3)
-				catfriend.animations.play('walkRight', 20, true);
-			else
-				catfriend.animations.play('walkLeft', 20, true);
+			catfriend.animations.play('walkRight', 20, true);
 		}
 		else
 		{
