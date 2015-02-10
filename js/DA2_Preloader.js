@@ -32,8 +32,8 @@ RPGGame.Preloader.prototype = {
 		this.load.image('doors_lr', 'assets/s_doors_lronly.png');
 		this.load.tilemap('map', 'assets/RPG_Dungeon2.json', null, Phaser.Tilemap.TILED_JSON);
 		this.load.spritesheet('cat', 'assets/cat.png', 16, 16);
-		this.load.image('emptyhope', 'assets/manaBar100x12_empty.png');
-		this.load.image('fullhope', 'assets/manaBar100x12.png');
+		this.load.image('hopeempty', 'assets/manaBar100x12_empty.png');
+		this.load.image('hopefull', 'assets/manaBar100x12.png');
 		
 		//	+ lots of other required assets here
 
