@@ -105,7 +105,6 @@ RPGGame.GameWorld.prototype = {
 		//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 		//hopebar.updateCrop();
 		time1 = this.game.time.now;
-		World.scale = 4;
     },
 
     update: function () {
@@ -160,6 +159,11 @@ RPGGame.GameWorld.prototype = {
         //this.state.start('MainMenu');
 
     }
+	
+	render: function() {
+
+		this.game.debug.cameraInfo(this.game.camera, 32, 32);
+	}
 
 };
 
