@@ -129,7 +129,7 @@ RPGGame.GameWorld.prototype = {
 		ycoord = game.rnd.integerInRange(16, 784);
 		
 		this = game.add.sprite(xcoord, ycoord, 'cat', 2);
-		while(physics.arcade.overlap(this, game.map.layer1))
+		while(physics.arcade.overlap(this, map.layer1))
 		{
 			xcoord = game.rnd.integerInRange(16, 784);
 			ycoord = game.rnd.integerInRange(16, 784);
