@@ -40,7 +40,8 @@ RPGGame.GameWorld.prototype = {
 		
 		catfriend = this.game.add.sprite(12, 22, 'cat', 2);
 		//this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
-		this.game.physics.enable(catfriend, Phaser.Physics.P2JS);
+		this.game.physics.p2.enable(catfriend);
+		//this.game.physics.enable(catfriend, Phaser.Physics.P2JS);
 		catfriend.animations.add('walkLeft', [1, 0]);
 		catfriend.animations.add('walkRight', [2, 3]);
 		//this.game.physics.arcade.TILE_BIAS = 40;
