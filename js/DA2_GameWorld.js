@@ -112,6 +112,36 @@ RPGGame.GameWorld.prototype = {
         //  Then let's go back to the main menu.
         //this.state.start('MainMenu');
 
-    }
+    },
+	
+	function newCat(game)
+	{
+		var xcoord, ycoord;
+		
+		xcoord = game.rnd.integerInRange(16, 784);
+		ycoord = game.rnd.integerInRange(16, 784);
+		
+		this = game.add.sprite(xcoord, ycoord, 'cat', 2);
+		while(physics.arcade.overlap(this, game.map.layer1))
+		{
+			xcoord = game.rnd.integerInRange(16, 784);
+			ycoord = game.rnd.integerInRange(16, 784);
+			this.kill();
+			this.reset(xcoord, ycoord);
+		}
+		this.animations.add('jumpRight', [2, 3]);
+		this.animations.,play('jumpRight', 20, true);
+	},
+	
+	function gainCat(player, cat) {
+    
+		// Remove cat (or replace with follower?)
+		//cat.kill();
+		//cat = new follower?
+
+		//Restore Hope and/or Courage
+		
+
+	}
 
 };
