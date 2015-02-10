@@ -65,7 +65,7 @@ RPGGame.GameWorld.prototype = {
 		catfriend.body.collides(playerCG);
 		catfriend.body.collides(wallsCG);
 		
-		walls = this.game.physics.p2.convertCollisionObjects(map, "CollisionLayer", true);
+		walls = this.game.physics.p2.convertCollisionObjects(map, "Layer3", true);
 		for(var wall in walls)
 		{
 			walls[wall].setCollisionGroup(wallsCG);
