@@ -72,6 +72,13 @@ RPGGame.GameWorld.prototype = {
 			walls[wall].collides(playerCG);
 			//walls[wall].collides(playerperson);
 		}*/
+		
+		collectioncats = this.game.add.group();
+		collectioncats.enableBody = true;
+		for(var i = 0; i < 25; i++)
+		{
+			collectioncats.add(newCat(this.game));
+		}
     },
 
     update: function () {
@@ -131,6 +138,8 @@ RPGGame.GameWorld.prototype = {
 		}
 		this.animations.add('jumpRight', [2, 3]);
 		this.animations.,play('jumpRight', 20, true);
+		
+		return this;
 	},
 	
 	function gainCat(player, cat) {
