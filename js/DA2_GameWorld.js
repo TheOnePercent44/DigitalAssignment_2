@@ -86,8 +86,8 @@ RPGGame.GameWorld.prototype = {
 		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hopefull');
 		HOPEMAX = 500;
 		hope = HOPEMAX;
-		hopebar.cropEnabled = true;
-		hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
+		hopebar.crop(Phaser.Rectangle.newRectangle(hopeback.x, hopeback.y, hopebar.width, hopebar.height));
+		hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 		hopebar.updateCrop();
 		time1 = this.game.time.now;
     },
@@ -99,7 +99,7 @@ RPGGame.GameWorld.prototype = {
 		//console.log("hope %d", hope);
 		if(hope <= 0)
 			hope = 0;//also end the game
-		hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
+		hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 		hopebar.updateCrop();
 		//this.game.physics.p2.collide(playerCG, wallsCG);//invalid function
 		
