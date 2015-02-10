@@ -55,6 +55,7 @@ RPGGame.GameWorld.prototype = {
 		//map.setCollision(, true, layer1);
 		/*this.game.camera.setSize(100, 100);
 		this.game.camera.follow(catfriend);*/
+		catfriend.anchor.setTo(0.5, 0.5);
 		catfriend.body.setCollisionGroup(playerCG);
 		catfriend.body.collides(playerCG);
 		catfriend.body.collides(wallsCG);
