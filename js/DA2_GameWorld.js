@@ -130,18 +130,18 @@ function newCat(game)
 	xcoord = game.rnd.integerInRange(16, 784);
 	ycoord = game.rnd.integerInRange(16, 784);
 	
-	this = game.add.sprite(xcoord, ycoord, 'cat', 2);
+	var meowcat = game.add.sprite(xcoord, ycoord, 'cat', 2);
 	while(physics.arcade.overlap(this, map.layer1))
 	{
 		xcoord = game.rnd.integerInRange(16, 784);
 		ycoord = game.rnd.integerInRange(16, 784);
-		this.kill();
-		this.reset(xcoord, ycoord);
+		meowcat.kill();
+		meowcat.reset(xcoord, ycoord);
 	}
-	this.animations.add('jumpRight', [2, 3]);
-	this.animations.,play('jumpRight', 20, true);
+	meowcat.animations.add('jumpRight', [2, 3]);
+	meowcat.animations.,play('jumpRight', 20, true);
 	
-	return this;
+	return meowcat;
 };
 
 function gainCat(player, cat) {
