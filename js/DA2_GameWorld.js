@@ -24,7 +24,7 @@ RPGGame.GameWorld = function (game) {
 
 };
 
-var catfriend, map, layer0, layer1, layer2, wallsCG, playerCG;
+var catfriend, map, layer0, layer1, layer2, walls;
 var speed = 2;
 RPGGame.GameWorld.prototype = {
 	
@@ -39,18 +39,23 @@ RPGGame.GameWorld.prototype = {
 		layer0.resizeWorld();
 		
 		catfriend = this.game.add.sprite(12, 22, 'cat', 2);
-		this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
-		//this.game.physics.enable(catfriend, Phaser.Physics.P2JS);
+		//this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
+		this.game.physics.enable(catfriend, Phaser.Physics.P2JS);
 		catfriend.animations.add('walkLeft', [1, 0]);
 		catfriend.animations.add('walkRight', [2, 3]);
-		//this.game.physics.collide(catfriend, layer1);
-		this.game.physics.arcade.TILE_BIAS = 40;
-		this.game.physics.arcade.collide(catfriend, layer1);
+		//this.game.physics.arcade.TILE_BIAS = 40;
+		//this.game.physics.arcade.collide(catfriend, layer1);
 		//this.game.physics.p2js.TILE_BIAS = 40;
 		//this.game.physics.p2js.collide(catfriend, layer1);
 		//map.setCollision(, true, layer1);
 		/*this.game.camera.setSize(100, 100);
 		this.game.camera.follow(catfriend);*/
+		walls = game.physics.p2.convertCollisionObjects(map, "CollisionLayer", true);
+		for(var wall in walls)
+		{
+			walls[wall].collides(catfriend);
+			//walls[wall].collides(playerperson);
+		}
     },
 
     update: function () {
