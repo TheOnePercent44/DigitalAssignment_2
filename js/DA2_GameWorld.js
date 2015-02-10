@@ -81,7 +81,7 @@ RPGGame.GameWorld.prototype = {
 			collectioncats.add(newCat(this.game));
 		}
 		
-		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.20, 'hopeempty');
+		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.10, 'hopeempty');
 		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hopefull');
 		HOPEMAX = 500;
 		hope = HOPEMAX;
@@ -94,6 +94,7 @@ RPGGame.GameWorld.prototype = {
 		hope -= 20;
 		if(hope <= 0)
 			hope = 0;//also end the game
+		hopebar.crop.width = (hope / HOPEMAX) * hopebar.width
 		//this.game.physics.p2.collide(playerCG, wallsCG);//invalid function
 		
 		if(this.game.input.keyboard.isDown(Phaser.Keyboard.A))
