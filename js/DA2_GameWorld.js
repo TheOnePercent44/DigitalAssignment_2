@@ -39,7 +39,7 @@ RPGGame.GameWorld.prototype = {
 		layer2 = map.createLayer('Layer2');
 		layer0.resizeWorld();
 		
-		catfriend = this.game.add.sprite(10, 20, 'cat', 2);
+		catfriend = this.game.add.sprite(12, 22, 'cat', 2);
 		this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
 		catfriend.animations.add('walkLeft', [1, 0]);
 		catfriend.animations.add('walkRight', [2, 3]);
@@ -51,6 +51,7 @@ RPGGame.GameWorld.prototype = {
 		map.setCollision(14);
 		map.setCollision(16);*/
 		map.setCollision([3, 9, 14, 16], true, layer1);
+		this.game.camera.setSize(100, 100);
 		this.game.camera.follow(catfriend);
     },
 
