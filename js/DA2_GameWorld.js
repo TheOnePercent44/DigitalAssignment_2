@@ -44,10 +44,13 @@ RPGGame.GameWorld.prototype = {
 		catfriend.animations.add('walkLeft', [1, 0]);
 		catfriend.animations.add('walkRight', [2, 3]);
 		//this.game.physics.collide(catfriend, layer1);
-		map.setCollision(3);
+		this.game.physics.arcade.TILE_BIAS = 40;
+		this.game.physics.arcade.collide(catfriend, layer1);
+		/*map.setCollision(3);
 		map.setCollision(9);
 		map.setCollision(14);
-		map.setCollision(16);
+		map.setCollision(16);*/
+		map.setCollision([3, 9, 14, 16], true, layer1);
 		this.game.camera.follow(catfriend);
     },
 
@@ -70,14 +73,10 @@ RPGGame.GameWorld.prototype = {
 		{
 			//catfriend.body.moveUp(300);
 			catfriend.body.y -= speed;
-			if(catfriend.animations.currentAnim == null)
-			{
-				if(catfriend.frame === 2)
-					catfriend.animations.play('walkRight', 20, true);
-				else
-					catfriend.animations.play('walkLeft', 20, true);
-			}
-			else{}//let the anim play
+			if(catfriend.frame === 2 || catfriend.frame === 3)
+				catfriend.animations.play('walkRight', 20, true);
+			else
+				catfriend.animations.play('walkLeft', 20, true);
 		}
 		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.S))
 		{
