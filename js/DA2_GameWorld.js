@@ -158,7 +158,7 @@ RPGGame.GameWorld.prototype = {
         //  Then let's go back to the main menu.
         //this.state.start('MainMenu');
 
-    }
+    },
 	
 	render: function() {
 
