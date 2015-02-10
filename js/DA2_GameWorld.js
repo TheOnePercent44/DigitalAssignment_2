@@ -76,7 +76,7 @@ RPGGame.GameWorld.prototype = {
 
     update: function () {
 		//this.game.physics.arcade.collide(catfriend, layer1);
-		this.game.physics.p2.collide(playerCG, wallsCG);
+		//this.game.physics.p2.collide(playerCG, wallsCG);//invalid function
 		
 		if(this.game.input.keyboard.isDown(Phaser.Keyboard.A))
 		{
