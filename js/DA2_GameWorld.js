@@ -26,6 +26,7 @@ RPGGame.GameWorld = function (game) {
 
 var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer, wallsCG, playerCG;
 var speed = 2, hope, HOPEMAX, courage, COURAGEMAX, hopebar, hopeback;
+var time1, time2;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
@@ -88,11 +89,13 @@ RPGGame.GameWorld.prototype = {
 		hopebar.cropEnabled = true;
 		hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 		hopebar.updateCrop();
+		time1 = game.time.now;
     },
 
     update: function () {
 		this.game.physics.arcade.collide(catfriend.body, layer1);
-		hope -= 20;
+		if(game.time.now-time1 > 3000)
+			hope -= 20;
 		//console.log("hope %d", hope);
 		if(hope <= 0)
 			hope = 0;//also end the game
