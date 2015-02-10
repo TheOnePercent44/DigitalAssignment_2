@@ -59,8 +59,8 @@ RPGGame.GameWorld.prototype = {
 		catfriend.animations.add('walkRight', [2, 3]);
 		//this.game.physics.arcade.collide(catfriend, layer1);
 		//this.game.physics.arcade.TILE_BIAS = 50;
-		/*this.game.camera.setSize(100, 100);
-		this.game.camera.follow(catfriend);*/
+		this.game.camera.setSize(100, 100);
+		this.game.camera.follow(catfriend);
 		
 		/*catfriend.body.setCollisionGroup(playerCG);
 		catfriend.body.collides(playerCG);
@@ -79,6 +79,8 @@ RPGGame.GameWorld.prototype = {
 		{
 			collectioncats.add(newCat(this.game));
 		}
+		
+		//this.game.add.sprite(
     },
 
     update: function () {
@@ -147,10 +149,12 @@ function newCat(game)
 function gainCat(player, cat) {
 
 	// Remove cat (or replace with follower?)
-	//cat.kill();
+	cat.kill();
 	//cat = new follower?
 
 	//Restore Hope and/or Courage
-	
+	hope += 20;
+	if(hope > HOPEMAX)
+		hope = HOPEMAX;
 
 };
