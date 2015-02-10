@@ -113,7 +113,8 @@ RPGGame.GameWorld.prototype = {
     },
 
     update: function () {
-		this.game.physics.arcade.collide(catfriend.body, layer1);
+		//this.game.physics.arcade.collide(catfriend.body, layer1);
+		Phaser.Physics.Arcade.collide(catfriend, layer1);
 		this.game.physics.arcade.overlap(catfriend, collectioncats, gainCat);
 		if(this.game.time.now-time1 > 3000)
 		{
@@ -163,12 +164,12 @@ RPGGame.GameWorld.prototype = {
         //  Then let's go back to the main menu.
         //this.state.start('MainMenu');
 
-    },
+    }/*,
 	
 	render: function() {
 
 		this.game.debug.cameraInfo(this.game.camera, 32, 32);
-	}
+	}*/
 
 };
 
