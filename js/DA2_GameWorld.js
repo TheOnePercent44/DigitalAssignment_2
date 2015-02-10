@@ -61,6 +61,7 @@ RPGGame.GameWorld.prototype = {
 		//this.game.physics.arcade.TILE_BIAS = 50;
 		this.game.camera.setSize(100, 100);
 		this.game.camera.follow(catfriend);
+		this.game.camera.update();
 		
 		/*catfriend.body.setCollisionGroup(playerCG);
 		catfriend.body.collides(playerCG);
