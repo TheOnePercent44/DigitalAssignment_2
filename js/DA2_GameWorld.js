@@ -82,9 +82,15 @@ RPGGame.GameWorld.prototype = {
 			collectioncats.add(newCat(this.game));
 		}
 		
-		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.10, 'barback');
+		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'barback');
 		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hope');
 		hopefore = this.game.add.sprite(hopeback.x, hopeback.y, 'barfore');
+		hopeback.scale.x = 0.5;
+		hopeback.scale.y = 0.5;
+		hopebar.scale.x = 0.5;
+		hopebar.scale.y = 0.5;
+		hopefore.scale.x = 0.5;
+		hopefore.scale.y = 0.5;
 		hopebar.cropEnabled = true;
 		HOPEMAX = 500;
 		hope = 325;//HOPEMAX;
