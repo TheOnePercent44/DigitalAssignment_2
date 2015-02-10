@@ -30,7 +30,8 @@ var time1, cropbox;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
-		this.game.world.setBounds(-4000, -4000, 8000, 8000);
+		//this.game.world.setBounds(-4000, -4000, 8000, 8000);
+		this.game.world.scale = 4;
 		//this.game.physics.startSystem(Phaser.Physics.P2JS);
 		this.game.physics.startSystem(Phaser.Physics.ARCADE);
 		//this.game.physics.p2.setImpactEvents(true);
