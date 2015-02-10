@@ -30,6 +30,7 @@ RPGGame.GameWorld.prototype = {
 	
     create: function () {
 		this.game.physics.startSystem(Phaser.Physics.P2JS);
+		this.game.physics.p2.setImpactEvents(true);
 		wallsCG = this.game.physics.p2.createCollisionGroup();
 		playerCG = this.game.physics.p2.createCollisionGroup();
 		
