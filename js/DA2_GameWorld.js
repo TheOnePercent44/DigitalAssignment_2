@@ -29,11 +29,11 @@ var speed = 2;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
-		//this.game.physics.startSystem(Phaser.Physics.P2JS);
-		this.game.physics.startSystem(Phaser.Physics.ARCADE);
+		this.game.physics.startSystem(Phaser.Physics.P2JS);
+		//this.game.physics.startSystem(Phaser.Physics.ARCADE);
 		//this.game.physics.p2.setImpactEvents(true);
-		//wallsCG = this.game.physics.p2.createCollisionGroup();
-		//playerCG = this.game.physics.p2.createCollisionGroup();
+		wallsCG = this.game.physics.p2.createCollisionGroup();
+		playerCG = this.game.physics.p2.createCollisionGroup();
 		
 		map = this.game.add.tilemap('map');
 		map.addTilesetImage('stone_walls', 'stonewalls');
@@ -44,13 +44,13 @@ RPGGame.GameWorld.prototype = {
 		//layer2 = map.createLayer('Layer2');
 		layer1.resizeWorld();
 		catfriend = this.game.add.sprite(30, 30, 'cat', 2);
-		//CollisionLayer = map.createLayer('CollisionLayer');
+		CollisionLayer = map.createLayer('CollisionLayer');
 		
-		this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
+		//this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
+		this.game.physics.enable(catfriend, Phaser.Physics.P2JS);
 		catfriend.anchor.setTo(0.5, 0.5);
 		//catfriend.body.collideWorldBounds = true;
-		catfriend.body.tilePadding.set(16, 16);
-		//this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
+		//catfriend.body.tilePadding.set(16, 16);
 		//map.setCollision([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31], true, layer1, true);
 		//map.setCollisionByExclusion([0, 18], true, layer1);
 		map.setCollisionBetween(1, 40, true, 'Layer1', true);
@@ -58,12 +58,9 @@ RPGGame.GameWorld.prototype = {
 		catfriend.animations.add('walkLeft', [1, 0]);
 		catfriend.animations.add('walkRight', [2, 3]);
 		//this.game.physics.arcade.collide(catfriend, layer1);
-		this.game.physics.arcade.TILE_BIAS = 50;
-		//this.game.physics.p2js.TILE_BIAS = 40;
-		//this.game.physics.p2js.collide(catfriend, layer1);
+		//this.game.physics.arcade.TILE_BIAS = 50;
 		/*this.game.camera.setSize(100, 100);
 		this.game.camera.follow(catfriend);*/
-		/*catfriend.anchor.setTo(0.5, 0.5);
 		catfriend.body.setCollisionGroup(playerCG);
 		catfriend.body.collides(playerCG);
 		catfriend.body.collides(wallsCG);
@@ -74,7 +71,7 @@ RPGGame.GameWorld.prototype = {
 			walls[wall].setCollisionGroup(wallsCG);
 			walls[wall].collides(playerCG);
 			//walls[wall].collides(playerperson);
-		}*/
+		}
     },
 
     update: function () {
