@@ -48,6 +48,9 @@ RPGGame.GameWorld.prototype = {
 		catfriend = this.game.add.sprite(12, 22, 'cat', 2);
 		//this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
 		this.game.physics.arcade.enable(catfriend);
+		//map.setCollision(, true, layer1);
+		//map.setCollisionByExclusion([18], true, layer1);
+		map.setCollisionBetween(1, 40, true, layer1);
 		//this.game.physics.p2.enable(catfriend);
 		catfriend.animations.add('walkLeft', [1, 0]);
 		catfriend.animations.add('walkRight', [2, 3]);
@@ -55,9 +58,6 @@ RPGGame.GameWorld.prototype = {
 		this.game.physics.arcade.TILE_BIAS = 40;
 		//this.game.physics.p2js.TILE_BIAS = 40;
 		//this.game.physics.p2js.collide(catfriend, layer1);
-		//map.setCollision(, true, layer1);
-		//map.setCollisionByExclusion([18], true, layer1);
-		map.setCollisionBetween(1, 40, true, layer1);
 		/*this.game.camera.setSize(100, 100);
 		this.game.camera.follow(catfriend);*/
 		/*catfriend.anchor.setTo(0.5, 0.5);
