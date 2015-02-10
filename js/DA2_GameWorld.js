@@ -86,15 +86,16 @@ RPGGame.GameWorld.prototype = {
 		HOPEMAX = 500;
 		hope = HOPEMAX;
 		hopebar.cropEnabled = true;
-		hopebar.crop.width = (hope / HOPEMAX) * hopebar.width
+		hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
     },
 
     update: function () {
 		this.game.physics.arcade.collide(catfriend.body, layer1);
 		hope -= 20;
+		//console.log("hope %d", hope);
 		if(hope <= 0)
 			hope = 0;//also end the game
-		hopebar.crop.width = (hope / HOPEMAX) * hopebar.width
+		hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
 		//this.game.physics.p2.collide(playerCG, wallsCG);//invalid function
 		
 		if(this.game.input.keyboard.isDown(Phaser.Keyboard.A))
