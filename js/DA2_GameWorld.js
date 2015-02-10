@@ -87,7 +87,7 @@ RPGGame.GameWorld.prototype = {
 		HOPEMAX = 500;
 		hope = HOPEMAX;
 		hopebar.cropEnabled = true;
-		hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
+		hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
 		hopebar.updateCrop();
 		time1 = game.time.now;
     },
@@ -99,7 +99,7 @@ RPGGame.GameWorld.prototype = {
 		//console.log("hope %d", hope);
 		if(hope <= 0)
 			hope = 0;//also end the game
-		hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
+		hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
 		hopebar.updateCrop();
 		//this.game.physics.p2.collide(playerCG, wallsCG);//invalid function
 		
