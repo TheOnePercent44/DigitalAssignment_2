@@ -31,7 +31,6 @@ RPGGame.GameWorld.prototype = {
 	
     create: function () {
 		//this.game.world.setBounds(-4000, -4000, 8000, 8000);
-		this.game.world.scale = 4;
 		//this.game.physics.startSystem(Phaser.Physics.P2JS);
 		this.game.physics.startSystem(Phaser.Physics.ARCADE);
 		//this.game.physics.p2.setImpactEvents(true);
@@ -108,6 +107,9 @@ RPGGame.GameWorld.prototype = {
 		//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 		//hopebar.updateCrop();
 		time1 = this.game.time.now;
+		
+		
+		this.game.world.scale = 4;
     },
 
     update: function () {
