@@ -78,8 +78,8 @@ RPGGame.GameWorld.prototype = {
     },
 
     update: function () {
-		//this.game.physics.arcade.collide(catfriend, layer1);
-		Phaser.Physics.Arcade.collide(catfriend, layer1);
+		this.game.physics.arcade.collide(catfriend.body, layer1);
+		//Phaser.Physics.Arcade.collide(catfriend, layer1);
 		if(this.game.input.keyboard.isDown(Phaser.Keyboard.A))
 		{
 			catfriend.body.x -= speed;
