@@ -26,7 +26,7 @@ RPGGame.GameWorld = function (game) {
 
 var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer, wallsCG, playerCG;
 var speed = 2, hope, HOPEMAX, courage, COURAGEMAX, hopebar, hopeback, hopefore;
-var time1;
+var time1, cropbox;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
@@ -91,18 +91,19 @@ RPGGame.GameWorld.prototype = {
 		hopebar.scale.y = 0.5;
 		hopefore.scale.x = 0.5;
 		hopefore.scale.y = 0.5;
-		hopebar.cropEnabled = true;
+		
+		//hopebar.cropEnabled = true;
 		HOPEMAX = 500;
 		hope = 325;//HOPEMAX;
 		console.log("width: %d, Height: %d", hopebar.width, hopebar.height);//debug
-		//var cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
-		hopebar.crop = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
-		//hopebar.crop(cropbox);
+		cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
+		//hopebar.crop = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
+		hopebar.crop(cropbox);
 		//hopebar.cropRect = cropbox;
-		hopebar.crop = hopebar.crop;
-		hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
-		//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
-		//hopebar.updateCrop();
+		//hopebar.crop = hopebar.crop;
+		//hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
+		hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
+		hopebar.updateCrop();
 		time1 = this.game.time.now;
     },
 
@@ -114,7 +115,7 @@ RPGGame.GameWorld.prototype = {
 			hope -= 20;
 			//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 			//hopebar.updateCrop();
-			hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
+			//hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
 			time1 = this.game.time.now;
 		}
 		console.log("hope %d", hope);
