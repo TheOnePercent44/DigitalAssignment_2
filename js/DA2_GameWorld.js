@@ -36,7 +36,7 @@ RPGGame.GameWorld.prototype = {
 		layer0 = map.createLayer('Layer0');
 		layer1 = map.createLayer('Layer1');
 		layer2 = map.createLayer('Layer2');
-		CollisionLayer = map.createLayer('CollisionLayer');
+		//CollisionLayer = map.createLayer('CollisionLayer');
 		layer0.resizeWorld();
 		
 		catfriend = this.game.add.sprite(12, 22, 'cat', 2);
@@ -52,12 +52,12 @@ RPGGame.GameWorld.prototype = {
 		//map.setCollision(, true, layer1);
 		/*this.game.camera.setSize(100, 100);
 		this.game.camera.follow(catfriend);*/
-		/*walls = game.physics.p2.convertCollisionObjects(map, "CollisionLayer", true);
+		walls = game.physics.p2.convertCollisionObjects(map, "CollisionLayer", true);
 		for(var wall in walls)
 		{
 			walls[wall].collides(catfriend);
 			//walls[wall].collides(playerperson);
-		}*/
+		}
     },
 
     update: function () {
