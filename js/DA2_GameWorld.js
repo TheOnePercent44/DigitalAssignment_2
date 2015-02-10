@@ -24,12 +24,14 @@ RPGGame.GameWorld = function (game) {
 
 };
 
-var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer;
+var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer, wallsCG, playerCG;
 var speed = 2;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
-		game.physics.startSystem(Phaser.Physics.P2JS);
+		this.game.physics.startSystem(Phaser.Physics.P2JS);
+		wallsCG = this.game.physics.p2.createCollisionGroup();
+		playerCG = this.game.physics.p2.createCollisionGroup();
 		
 		map = this.game.add.tilemap('map');
 		map.addTilesetImage('stone_walls', 'stonewalls');
@@ -53,10 +55,14 @@ RPGGame.GameWorld.prototype = {
 		//map.setCollision(, true, layer1);
 		/*this.game.camera.setSize(100, 100);
 		this.game.camera.follow(catfriend);*/
+		catfriend.body.setCollisionGroup(playerCG);
+		catfriend.body.collides(playerCG);
+		
 		walls = game.physics.p2.convertCollisionObjects(map, "CollisionLayer", true);
 		for(var wall in walls)
 		{
-			walls[wall].collides(catfriend);
+			walls[wall].setCollisionGroup(wallsCG);
+			walls[wall].collides(playerCG);
 			//walls[wall].collides(playerperson);
 		}
     },
