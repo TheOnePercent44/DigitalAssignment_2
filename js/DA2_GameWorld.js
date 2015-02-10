@@ -109,7 +109,7 @@ RPGGame.GameWorld.prototype = {
 		time1 = this.game.time.now;
 		
 		
-		this.game.world.scale = 4;
+		//this.game.world.scale = 4;
     },
 
     update: function () {
