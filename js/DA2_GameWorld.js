@@ -29,6 +29,8 @@ var speed = 2;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
+		game.physics.startSystem(Phaser.Physics.P2JS);
+		
 		map = this.game.add.tilemap('map');
 		map.addTilesetImage('stone_walls', 'stonewalls');
 		map.addTilesetImage('doors_udonly', 'doors_ud');
@@ -40,12 +42,11 @@ RPGGame.GameWorld.prototype = {
 		layer0.resizeWorld();
 		
 		catfriend = this.game.add.sprite(12, 22, 'cat', 2);
-		this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
-		//this.game.physics.p2.enable(catfriend);
-		//this.game.physics.enable(catfriend, Phaser.Physics.P2JS);
+		//this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
+		this.game.physics.p2.enable(catfriend);
 		catfriend.animations.add('walkLeft', [1, 0]);
 		catfriend.animations.add('walkRight', [2, 3]);
-		this.game.physics.arcade.TILE_BIAS = 40;
+		//this.game.physics.arcade.TILE_BIAS = 40;
 		//this.game.physics.arcade.collide(catfriend, CollisionLayer);
 		//this.game.physics.p2js.TILE_BIAS = 40;
 		//this.game.physics.p2js.collide(catfriend, layer1);
