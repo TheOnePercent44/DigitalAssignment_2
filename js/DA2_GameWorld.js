@@ -42,7 +42,7 @@ RPGGame.GameWorld.prototype = {
 		layer0 = map.createLayer('Layer0');
 		layer1 = map.createLayer('Layer1');
 		//layer2 = map.createLayer('Layer2');
-		layer0.resizeWorld();
+		layer1.resizeWorld();
 		catfriend = this.game.add.sprite(20, 25, 'cat', 2);
 		//CollisionLayer = map.createLayer('CollisionLayer');
 		
