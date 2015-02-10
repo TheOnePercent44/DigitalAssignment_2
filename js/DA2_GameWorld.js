@@ -131,7 +131,7 @@ function newCat(game)
 	ycoord = game.rnd.integerInRange(16, 784);
 	
 	var meowcat = game.add.sprite(xcoord, ycoord, 'cat', 2);
-	while(physics.arcade.overlap(this, map.layer1))
+	while(game.physics.arcade.overlap(this, map.layer1))
 	{
 		xcoord = game.rnd.integerInRange(16, 784);
 		ycoord = game.rnd.integerInRange(16, 784);
