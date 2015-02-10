@@ -43,7 +43,7 @@ RPGGame.GameWorld.prototype = {
 		layer1 = map.createLayer('Layer1');
 		//layer2 = map.createLayer('Layer2');
 		layer1.resizeWorld();
-		catfriend = this.game.add.sprite(20, 25, 'cat', 2);
+		catfriend = this.game.add.sprite(30, 30, 'cat', 2);
 		//CollisionLayer = map.createLayer('CollisionLayer');
 		
 		this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
