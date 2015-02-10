@@ -37,11 +37,6 @@ RPGGame.GameWorld.prototype = {
 		map.addTilesetImage('stone_walls', 'stonewalls');
 		map.addTilesetImage('doors_udonly', 'doors_ud');
 		map.addTilesetImage('doors_lronly', 'doors_lr');
-		layer0 = map.createLayer('Layer0');
-		layer1 = map.createLayer('Layer1');
-		layer2 = map.createLayer('Layer2');
-		//CollisionLayer = map.createLayer('CollisionLayer');
-		layer0.resizeWorld();
 		
 		catfriend = this.game.add.sprite(12, 22, 'cat', 2);
 		//this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
@@ -67,6 +62,12 @@ RPGGame.GameWorld.prototype = {
 			walls[wall].collides(playerCG);
 			//walls[wall].collides(playerperson);
 		}
+		
+		layer0 = map.createLayer('Layer0');
+		layer1 = map.createLayer('Layer1');
+		layer2 = map.createLayer('Layer2');
+		//CollisionLayer = map.createLayer('CollisionLayer');
+		layer0.resizeWorld();
     },
 
     update: function () {
