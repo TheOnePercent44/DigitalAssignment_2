@@ -78,7 +78,8 @@ RPGGame.GameWorld.prototype = {
     },
 
     update: function () {
-		this.game.physics.arcade.collide(catfriend, layer1);//test collision with layer1 (wall layer)
+		if(this.game.physics.arcade.collide(catfriend, layer1))
+			console.log("Collision!");//test collision with layer1 (wall layer)
 		if(this.game.input.keyboard.isDown(Phaser.Keyboard.A))
 		{
 			catfriend.body.x -= speed;
