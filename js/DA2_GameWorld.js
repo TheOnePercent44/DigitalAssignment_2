@@ -89,12 +89,12 @@ RPGGame.GameWorld.prototype = {
 		hopebar.cropEnabled = true;
 		hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
 		hopebar.updateCrop();
-		time1 = game.time.now;
+		time1 = this.game.time.now;
     },
 
     update: function () {
 		this.game.physics.arcade.collide(catfriend.body, layer1);
-		if(game.time.now-time1 > 3000)
+		if(this.game.time.now-time1 > 3000)
 			hope -= 20;
 		//console.log("hope %d", hope);
 		if(hope <= 0)
