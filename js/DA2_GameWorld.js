@@ -45,8 +45,8 @@ RPGGame.GameWorld.prototype = {
 		//CollisionLayer = map.createLayer('CollisionLayer');
 		layer0.resizeWorld();
 		
-		catfriend = this.game.add.sprite(12, 22, 'cat', 2);
-		catfriend.collideWorldBounds();
+		catfriend = this.game.add.sprite(15, 23, 'cat', 2);
+		catfriend.body.collideWorldBounds = true;
 		catfriend.body.tilePadding.set(32, 32);
 		//this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
 		this.game.physics.arcade.enable(catfriend);
