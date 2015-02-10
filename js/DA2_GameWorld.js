@@ -25,15 +25,15 @@ RPGGame.GameWorld = function (game) {
 };
 
 var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer, wallsCG, playerCG;
-var speed = 2;
+var speed = 2, hope, HOPEMAX, courage, COURAGEMAX;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
 		this.game.physics.startSystem(Phaser.Physics.P2JS);
 		//this.game.physics.startSystem(Phaser.Physics.ARCADE);
 		//this.game.physics.p2.setImpactEvents(true);
-		wallsCG = this.game.physics.p2.createCollisionGroup();
-		playerCG = this.game.physics.p2.createCollisionGroup();
+		//wallsCG = this.game.physics.p2.createCollisionGroup();
+		//playerCG = this.game.physics.p2.createCollisionGroup();
 		
 		map = this.game.add.tilemap('map');
 		map.addTilesetImage('stone_walls', 'stonewalls');
@@ -46,8 +46,8 @@ RPGGame.GameWorld.prototype = {
 		catfriend = this.game.add.sprite(30, 30, 'cat', 2);
 		//CollisionLayer = map.createLayer('Layer3');
 		
-		//this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
-		this.game.physics.enable(catfriend, Phaser.Physics.P2JS);
+		this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
+		//this.game.physics.enable(catfriend, Phaser.Physics.P2JS);
 		catfriend.anchor.setTo(0.5, 0.5);
 		//catfriend.body.collideWorldBounds = true;
 		//catfriend.body.tilePadding.set(16, 16);
