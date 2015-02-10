@@ -43,7 +43,7 @@ RPGGame.GameWorld.prototype = {
 		//this.game.physics.enable(catfriend, Phaser.Physics.P2JS);
 		catfriend.animations.add('walkLeft', [1, 0]);
 		catfriend.animations.add('walkRight', [2, 3]);
-		this.game.physics.collide(catfriend, layer1);
+		//this.game.physics.collide(catfriend, layer1);
 		this.game.physics.arcade.TILE_BIAS = 40;
 		this.game.physics.arcade.collide(catfriend, layer1);
 		//this.game.physics.p2js.TILE_BIAS = 40;
