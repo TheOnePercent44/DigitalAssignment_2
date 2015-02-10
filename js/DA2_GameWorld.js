@@ -51,7 +51,7 @@ RPGGame.GameWorld.prototype = {
 		//catfriend.body.collideWorldBounds = true;
 		catfriend.body.tilePadding.set(16, 16);
 		//this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
-		map.setCollision([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31], true, layer1.index, true);
+		map.setCollision([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31], true, layer1, true);
 		//map.setCollisionByExclusion([0, 18], true, layer1);
 		//map.setCollisionBetween(1, 40, true, layer1);
 		//this.game.physics.p2.enable(catfriend);
