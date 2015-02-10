@@ -88,7 +88,8 @@ RPGGame.GameWorld.prototype = {
 		hope = HOPEMAX;
 		console.log("width: %d, Height: %d", hopebar.width, hopebar.height);//debug
 		var cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
-		hopebar.crop(cropbox);
+		//hopebar.crop(cropbox);
+		hopebar.cropRect = cropbox;
 		//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 		//hopebar.updateCrop();
 		time1 = this.game.time.now;
