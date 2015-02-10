@@ -30,7 +30,7 @@ var time1, cropbox;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
-		this.game.world.setBounds(0, 0, 8000, 8000);
+		this.game.world.setBounds(-4000, -4000, 8000, 8000);
 		//this.game.physics.startSystem(Phaser.Physics.P2JS);
 		this.game.physics.startSystem(Phaser.Physics.ARCADE);
 		//this.game.physics.p2.setImpactEvents(true);
@@ -61,7 +61,7 @@ RPGGame.GameWorld.prototype = {
 		catfriend.animations.add('walkRight', [2, 3]);
 		//this.game.physics.arcade.collide(catfriend, layer1);
 		//this.game.physics.arcade.TILE_BIAS = 50;
-		this.game.camera.setSize(100, 100);
+		//this.game.camera.setSize(100, 100);
 		//this.game.camera.bounds = new Phaser.Rectangle(0, 0, 100,100);
 		this.game.camera.follow(catfriend, this.game.camera.FOLLOW_TOPDOWN_TIGHT);
 		//this.game.camera.update();
