@@ -86,7 +86,7 @@ RPGGame.GameWorld.prototype = {
 		
 		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'barback');
 		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hope');//where did this go?
-		hopebar.reset(hopeback.x, hopeback.y);
+		//hopebar.reset(hopeback.x, hopeback.y);
 		hopefore = this.game.add.sprite(hopeback.x, hopeback.y, 'barfore');
 		hopeback.scale.x = 0.5;
 		hopeback.scale.y = 0.5;
@@ -101,7 +101,7 @@ RPGGame.GameWorld.prototype = {
 		console.log("width: %d, Height: %d", hopebar.width, hopebar.height);//debug
 		cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
 		//hopebar.crop = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
-		hopebar.crop(cropbox);
+		//hopebar.crop(cropbox);
 		//hopebar.cropRect = cropbox;
 		//hopebar.crop = hopebar.crop;
 		//hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
