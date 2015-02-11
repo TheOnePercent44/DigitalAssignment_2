@@ -85,7 +85,8 @@ RPGGame.GameWorld.prototype = {
 		}
 		
 		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'barback');
-		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hope');
+		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hope');//where did this go?
+		hopebar.reset(hopeback.x, hopeback.y);
 		hopefore = this.game.add.sprite(hopeback.x, hopeback.y, 'barfore');
 		hopeback.scale.x = 0.5;
 		hopeback.scale.y = 0.5;
@@ -113,7 +114,7 @@ RPGGame.GameWorld.prototype = {
     },
 
     update: function () {
-		this.game.physics.arcade.collide(catfriend, layer1);
+		this.game.physics.arcade.collide(catfriend, 'Layer1');
 		//Phaser.Physics.Arcade.collide(catfriend, layer1);//not a function
 		this.game.physics.arcade.overlap(catfriend, collectioncats, gainCat);
 		if(this.game.time.now-time1 > 3000)
