@@ -322,8 +322,8 @@ function newCat(game)
 {
 	var xcoord, ycoord;
 	
-	xcoord = game.rnd.integerInRange(16, 784);
-	ycoord = game.rnd.integerInRange(16, 784);
+	xcoord = game.rnd.integerInRange(16, 3200);
+	ycoord = game.rnd.integerInRange(16, 3200);
 	
 	var meowcat = game.add.sprite(xcoord, ycoord, 'cat', 2);
 	game.physics.enable(meowcat, Phaser.Physics.ARCADE);
