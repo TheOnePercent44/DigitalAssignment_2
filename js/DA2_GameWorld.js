@@ -318,9 +318,9 @@ function newCCat(game)
 		meowcat.kill();
 		meowcat.reset(xcoord, ycoord);
 	}
-	meowcat.animations.add('jumpRight', [2, 3]);
-	meowcat.animations.add('jumpLeft', [1, 0]);
-	meowcat.animations.play('jumpRight', 5, true);
+	meowcat.animations.add('jumpRightC', [2, 3]);
+	meowcat.animations.add('jumpLeftC', [1, 0]);
+	meowcat.animations.play('jumpRightC', 5, true);
 	
 	return meowcat;
 };
