@@ -86,7 +86,7 @@ RPGGame.GameWorld.prototype = {
 		collectioncats.enableBody = true;
 		collectioncats.physicsBodyType = Phaser.Physics.ARCADE;
 		//collectioncats.setCollisionGroup(catsCG);
-		for(var i = 0; i < 25; i++)
+		for(var i = 0; i < 10; i++)
 		{
 			/*var catguy = newCat(this.game);
 			catguy.setCollisionGroup(catsCG);
@@ -187,7 +187,7 @@ RPGGame.GameWorld.prototype = {
 		
 		if(this.game.time.now-time1 > 2500)
 		{
-			hope -= 10;	
+			hope -= (HOPEMAX/hope)*10;//relative hope drain
 			if(hope <= 0)
 			{
 				hope = 0;//also end the game
