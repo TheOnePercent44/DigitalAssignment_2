@@ -25,7 +25,7 @@ RPGGame.GameWorld = function (game) {
 };
 
 var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer, wallsCG, playerCG, catsCG;
-var speed = 200, hope, HOPEMAX, courage, COURAGEMAX, hopebar, hopeback, hopefore;
+var speed = 100, hope, HOPEMAX, courage, COURAGEMAX, hopebar, hopeback, hopefore;
 var time1, cropbox, permawidth, collectioncats, courageCats;
 RPGGame.GameWorld.prototype = {
 	
@@ -133,11 +133,23 @@ RPGGame.GameWorld.prototype = {
 		hopefore.scale.x = 0.5;
 		hopefore.scale.y = 0.5;
 		
+		courageback = this.game.add.sprite(this.game.camera.width*0.5, this.game.camera.height*0.07, 'barback');
+		couragebar = this.game.add.sprite(courageback.x, courageback.y, 'courage');
+		couragefore = this.game.add.sprite(courageback.x, courageback.y, 'barfore');
+		courageback.scale.x = 0.5;
+		courageback.scale.y = 0.5;
+		couragebar.scale.x = 0.5;
+		couragebar.scale.y = 0.5;
+		couragefore.scale.x = 0.5;
+		couragefore.scale.y = 0.5;
+		
 		permawidth = hopebar.width;
 		
 		//hopebar.cropEnabled = true;
 		HOPEMAX = 500;
+		COURAGEMAX = 100;
 		hope = 320;//HOPEMAX;
+		courage = 50;
 		//console.log("width: %d, Height: %d", hopebar.width, hopebar.height);//debug
 		//cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, (hope/HOPEMAX)*hopebar.width, hopebar.height);
 		//hopebar.crop = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
@@ -149,6 +161,7 @@ RPGGame.GameWorld.prototype = {
 		//hopebar.cropRect.setTo(hopebar.x, hopebar.y, (hope / HOPEMAX) * hopebar.width, hopebar.height);
 		//hopebar.updateCrop();
 		hopebar.width = (hope / HOPEMAX) * permawidth;
+		couragebar.width = (courage / COURAGEMAX) * permawidth;
 		
 		time1 = this.game.time.now;
     },
@@ -332,9 +345,9 @@ function gainCCat(player, cat) {
 	//cat = new follower?
 
 	//Restore Hope and/or Courage
-	//courage += 20;
-	//if(courage > COURAGEMAX)
-		//courage = COURAGEMAX;
+	courage += 20;
+	if(courage > COURAGEMAX)
+		courage = COURAGEMAX;
 	
-	//hopebar.width = (hope / HOPEMAX) * permawidth;
+	couragebar.width = (courage/COURAGEMAX)*permawidth;
 };
