@@ -26,7 +26,7 @@ RPGGame.GameWorld = function (game) {
 
 var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer, wallsCG, playerCG, catsCG;
 var speed = 200, hope, HOPEMAX, courage, COURAGEMAX, hopebar, hopeback, hopefore;
-var time1, cropbox permawidth;
+var time1, cropbox, permawidth;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
