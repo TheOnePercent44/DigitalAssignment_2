@@ -29,6 +29,6 @@ RPGGame.LoseScreen.prototype = {
 	},
 	
 	returnToMenu: function(){
-		this.state.start('Preloader');
+		this.state.start('MainMenu');
 	}
 };
