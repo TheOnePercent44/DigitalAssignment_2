@@ -284,6 +284,9 @@ RPGGame.GameWorld.prototype = {
 	endGame: function(won)
 	{
 		this.music.stop();
+		collectioncats.destroy();
+		catfriend.destroy();
+		
 		if(won)
 			this.state.start('WinScreen');//display win screen
 		else
@@ -364,7 +367,7 @@ function gainCat(player, cat) {
 	//cat = new follower?
 
 	//Restore Hope and/or Courage
-	hope += 25;
+	hope += 30;
 	if(hope > HOPEMAX)
 		hope = HOPEMAX;
 	
