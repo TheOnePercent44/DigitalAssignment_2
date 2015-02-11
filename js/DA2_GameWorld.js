@@ -309,20 +309,20 @@ function newCCat(game)
 	xcoord = game.rnd.integerInRange(16, 784);
 	ycoord = game.rnd.integerInRange(16, 784);
 	
-	var meowcat = game.add.sprite(xcoord, ycoord, 'orangecat', 2);
-	game.physics.enable(meowcat, Phaser.Physics.ARCADE);
-	while(game.physics.arcade.collide(meowcat, layer1) || game.physics.arcade.collide(meowcat, catfriend))
+	var ccat = game.add.sprite(xcoord, ycoord, 'orangecat', 2);
+	game.physics.enable(ccat, Phaser.Physics.ARCADE);
+	while(game.physics.arcade.collide(ccat, layer1) || game.physics.arcade.collide(ccat, catfriend))
 	{
 		xcoord = game.rnd.integerInRange(16, 784);
 		ycoord = game.rnd.integerInRange(16, 784);
-		meowcat.kill();
-		meowcat.reset(xcoord, ycoord);
+		ccat.kill();
+		ccat.reset(xcoord, ycoord);
 	}
-	meowcat.animations.add('jumpRightC', [2, 3]);
-	meowcat.animations.add('jumpLeftC', [1, 0]);
-	meowcat.animations.play('jumpRightC', 5, true);
+	ccat.animations.add('jumpRightC', [2, 3]);
+	ccat.animations.add('jumpLeftC', [1, 0]);
+	ccat.animations.play('jumpRightC', 5, true);
 	
-	return meowcat;
+	return ccat;
 };
 
 function gainCCat(player, cat) {
