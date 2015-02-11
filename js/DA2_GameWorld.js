@@ -137,7 +137,7 @@ RPGGame.GameWorld.prototype = {
 		
 		//hopebar.cropEnabled = true;
 		HOPEMAX = 500;
-		hope = 325;//HOPEMAX;
+		hope = 320;//HOPEMAX;
 		//console.log("width: %d, Height: %d", hopebar.width, hopebar.height);//debug
 		//cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, (hope/HOPEMAX)*hopebar.width, hopebar.height);
 		//hopebar.crop = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
@@ -318,9 +318,9 @@ function newCCat(game)
 		ccat.kill();
 		ccat.reset(xcoord, ycoord);
 	}
-	//ccat.animations.add('jumpRightC', [2, 3]);
-	//ccat.animations.add('jumpLeftC', [1, 0]);
-	//ccat.animations.play('jumpRightC', 5, true);
+	ccat.animations.add('jumpRightC', [2, 3]);
+	ccat.animations.add('jumpLeftC', [1, 0]);
+	ccat.animations.play('jumpRightC', 5, true);
 	
 	return ccat;
 };
@@ -332,9 +332,9 @@ function gainCCat(player, cat) {
 	//cat = new follower?
 
 	//Restore Hope and/or Courage
-	courage += 20;
-	if(courage > COURAGEMAX)
-		courage = COURAGEMAX;
+	//courage += 20;
+	//if(courage > COURAGEMAX)
+		//courage = COURAGEMAX;
 	
 	//hopebar.width = (hope / HOPEMAX) * permawidth;
 };
