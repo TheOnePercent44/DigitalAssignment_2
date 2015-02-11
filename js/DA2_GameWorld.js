@@ -131,7 +131,7 @@ RPGGame.GameWorld.prototype = {
 		//Phaser.Physics.Arcade.collide(catfriend, layer1);//not a function
 		this.game.physics.arcade.overlap(catfriend, collectioncats, gainCat);
 		if(collectioncats.countLiving() === 0)
-			endGame(this, true);
+			this.endGame(this, true);
 		//hopebar.updateCrop();
 		//hopebar.width = (hope / HOPEMAX) * permawidth;
 		
@@ -141,7 +141,7 @@ RPGGame.GameWorld.prototype = {
 			if(hope <= 0)
 			{
 				hope = 0;//also end the game
-				endGame(this.state, false);
+				this.endGame(false);
 			}
 			//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 			//hopebar.updateCrop();
@@ -197,7 +197,14 @@ RPGGame.GameWorld.prototype = {
         //  Then let's go back to the main menu.
         //this.state.start('MainMenu');
 
-    }/*,
+    },
+	endGame: function(won)
+	{
+		if(won)
+			this.state.start('WinScreen');//display win screen
+		else
+			this.state.start('LoseScreen');//display lose screen
+	},/*,
 	
 	render: function() {
 
@@ -240,12 +247,4 @@ function gainCat(player, cat) {
 		hope = HOPEMAX;
 	
 	hopebar.width = (hope / HOPEMAX) * permawidth;
-};
-
-function endGame(pointer, won)
-{
-	if(won)
-		pointer.start('WinScreen');//display win screen
-	else
-		pointer.start('LoseScreen');//display lose screen
 };
