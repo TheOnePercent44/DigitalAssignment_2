@@ -186,7 +186,7 @@ RPGGame.GameWorld.prototype = {
 		
 		if(this.game.time.now-time1 > 2500)
 		{
-			hope -= 12;	
+			hope -= 10;	
 			if(hope <= 0)
 			{
 				hope = 0;//also end the game
@@ -327,7 +327,7 @@ function newCat(game)
 	
 	var meowcat = game.add.sprite(xcoord, ycoord, 'cat', 2);
 	game.physics.enable(meowcat, Phaser.Physics.ARCADE);
-	while(game.physics.arcade.collide(meowcat, layer1) || game.physics.arcade.collide(meowcat, catfriend))
+	while(map.getTile(xcoord, ycoord, layer1) == null || game.physics.arcade.collide(meowcat, layer1) || game.physics.arcade.collide(meowcat, catfriend))
 	{
 		xcoord = game.rnd.integerInRange(16, 784);
 		ycoord = game.rnd.integerInRange(16, 784);
@@ -348,7 +348,7 @@ function gainCat(player, cat) {
 	//cat = new follower?
 
 	//Restore Hope and/or Courage
-	hope += 20;
+	hope += 40;
 	if(hope > HOPEMAX)
 		hope = HOPEMAX;
 	
