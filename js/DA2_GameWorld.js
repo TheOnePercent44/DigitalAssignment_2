@@ -36,6 +36,7 @@ RPGGame.GameWorld.prototype = {
 		this.game.physics.p2.setImpactEvents(true);
 		wallsCG = this.game.physics.p2.createCollisionGroup();
 		playerCG = this.game.physics.p2.createCollisionGroup();
+		catsCG = this.game.physics.p2.createCollisionGroup();
 		
 		map = this.game.add.tilemap('map');
 		map.addTilesetImage('stone_walls', 'stonewalls');
@@ -71,6 +72,7 @@ RPGGame.GameWorld.prototype = {
 		catfriend.body.setCollisionGroup(playerCG);
 		catfriend.body.collides(playerCG);
 		catfriend.body.collides(wallsCG);
+		catfriend.body.collides(catsCG);
 		walls = this.game.physics.p2.convertCollisionObjects(map, "Layer3", true);
 		for(var wall in walls)
 		{
@@ -80,9 +82,13 @@ RPGGame.GameWorld.prototype = {
 		
 		collectioncats = this.game.add.group();
 		collectioncats.enableBody = true;
+		collectioncats.body.setCollisionGroup(catsCG);
 		for(var i = 0; i < 25; i++)
 		{
-			collectioncats.add(newCat(this.game));
+			var catguy = newCat(this.game);
+			catguy.setCollisionGroup(catsCG);
+			catguy.collides(playerCG);
+			collectioncats.add(catguy);
 		}
 		
 		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'barback');
