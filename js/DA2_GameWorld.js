@@ -80,16 +80,16 @@ RPGGame.GameWorld.prototype = {
 			walls[wall].collides(playerCG);
 		}
 		
-		collectioncats = this.game.add.group();
+		/*collectioncats = this.game.add.group();
 		collectioncats.enableBody = true;
-		collectioncats.setCollisionGroup(catsCG);
+		//collectioncats.setCollisionGroup(catsCG);
 		for(var i = 0; i < 25; i++)
 		{
 			var catguy = newCat(this.game);
 			catguy.setCollisionGroup(catsCG);
 			catguy.collides(playerCG);
 			collectioncats.add(catguy);
-		}
+		}*/
 		
 		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'barback');
 		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hope');//where did this go?
