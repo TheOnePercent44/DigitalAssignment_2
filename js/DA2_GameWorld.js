@@ -25,14 +25,15 @@ RPGGame.GameWorld = function (game) {
 };
 
 var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer, wallsCG, playerCG, catsCG;
-var speed = 100, hope, HOPEMAX, courage, COURAGEMAX, hopebar, hopeback, hopefore, pickup;
+var speed = 100, hope, HOPEMAX, courage, COURAGEMAX, hopebar, hopeback, hopefore, SM;
 var time1, time2, cattime, cropbox, permawidth, collectioncats, courageCats, catstopped = true;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
 		this.music = this.add.audio('gameMusic', 1.5, true);
 		this.music.play();
-		pickup = this.add.audio('healnoise', 2, false);
+		SM = this.game.newSoundManager();
+		SM.add('healnoise', 2, false);
 		//this.game.world.setBounds(0, 0, 4000, 4000);//widenbounds for tilemap load?
 		//this.game.physics.startSystem(Phaser.Physics.P2JS);
 		this.game.physics.startSystem(Phaser.Physics.ARCADE);
