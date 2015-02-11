@@ -26,7 +26,7 @@ RPGGame.GameWorld = function (game) {
 
 var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer, wallsCG, playerCG, catsCG;
 var speed = 200, hope, HOPEMAX, courage, COURAGEMAX, hopebar, hopeback, hopefore;
-var time1, cropbox, permawidth;
+var time1, cropbox, permawidth, collectioncats, courageCats;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
@@ -99,14 +99,14 @@ RPGGame.GameWorld.prototype = {
 		courageCats.enableBody = true;
 		courageCats.physicsBodyType = Phaser.Physics.ARCADE;
 		//collectioncats.setCollisionGroup(catsCG);
-		for(var i = 0; i < 10; i++)
+		/*for(var i = 0; i < 10; i++)
 		{
 			/*var catguy = newCat(this.game);
 			catguy.setCollisionGroup(catsCG);
 			catguy.collides(playerCG);
-			collectioncats.add(catguy);*/
+			collectioncats.add(catguy);
 			courageCats.add(newCCat(this.game));
-		}
+		}*/
 		
 		/*enemyGroup = this.game.add.group();
 		enemyGroup.enableBody = true;
