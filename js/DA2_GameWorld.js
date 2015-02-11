@@ -107,9 +107,9 @@ RPGGame.GameWorld.prototype = {
 		HOPEMAX = 500;
 		hope = 325;//HOPEMAX;
 		console.log("width: %d, Height: %d", hopebar.width, hopebar.height);//debug
-		cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, -hopebar.width, -hopebar.height);
+		cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, (hope/HOPEMAX)*hopebar.width, hopebar.height);
 		//hopebar.crop = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
-		//hopebar.crop(cropbox);
+		hopebar.crop(cropbox);
 		//hopebar.cropRect = cropbox;
 		//hopebar.crop = hopebar.crop;
 		//hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
@@ -126,6 +126,7 @@ RPGGame.GameWorld.prototype = {
 		this.game.physics.arcade.collide(catfriend, layer1);
 		//Phaser.Physics.Arcade.collide(catfriend, layer1);//not a function
 		this.game.physics.arcade.overlap(catfriend, collectioncats, gainCat);
+		hopebar.updateCrop();
 		if(this.game.time.now-time1 > 3000)
 		{
 			hope -= 20;
