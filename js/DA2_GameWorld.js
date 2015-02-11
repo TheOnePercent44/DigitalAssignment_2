@@ -130,7 +130,7 @@ RPGGame.GameWorld.prototype = {
     update: function () {
 		this.game.physics.arcade.collide(catfriend, layer1);
 		//Phaser.Physics.Arcade.collide(catfriend, layer1);//not a function
-		this.game.physics.arcade.overlap(catfriend, collectioncats, gainCat);
+		this.game.physics.arcade.collide(catfriend, collectioncats, gainCat);
 		if(collectioncats.countLiving() === 0)
 			this.endGame(this, true);
 		//hopebar.updateCrop();
@@ -223,7 +223,7 @@ function newBaddie(game)
 	ycoord = game.rnd.integerInRange(50, 784);
 	
 	var mummy = game.add.sprite(xcoord, ycoord, 'mummy', 2);
-	game.physics.enable(meowcat, Phaser.Physics.ARCADE);
+	game.physics.enable(mummy, Phaser.Physics.ARCADE);
 	while(game.physics.arcade.collide(mummy, layer1) || game.physics.arcade.overlap(mummy, catfriend))
 	{
 		xcoord = game.rnd.integerInRange(50, 784);
