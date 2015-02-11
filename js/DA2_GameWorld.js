@@ -95,6 +95,19 @@ RPGGame.GameWorld.prototype = {
 			collectioncats.add(newCat(this.game));
 		}
 		
+		enemyGroup = this.game.add.group();
+		enemyGroup.enableBody = true;
+		enemyGroup.physicsBodyType = Phaser.Physics.ARCADE;
+		//collectioncats.setCollisionGroup(catsCG);
+		for(var i = 0; i < 35; i++)
+		{
+			/*var catguy = newCat(this.game);
+			catguy.setCollisionGroup(catsCG);
+			catguy.collides(playerCG);
+			collectioncats.add(catguy);*/
+			enemyGroup.add(newBaddie(this.game));
+		}
+		
 		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'barback');
 		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hope');//where did this go?
 		//hopebar = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'hope');//none hopeback edition
@@ -148,6 +161,7 @@ RPGGame.GameWorld.prototype = {
 			//hopebar.updateCrop();
 			//hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
 			hopebar.width = (hope / HOPEMAX) * permawidth;
+			hopebar.x = hopeback.x;
 			time1 = this.game.time.now;
 		}
 		console.log("hope %d", hope);
