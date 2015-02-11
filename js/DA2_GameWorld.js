@@ -30,6 +30,8 @@ var time1, cropbox, permawidth;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
+		this.music = this.add.audio('gameMusic');
+		this.music.play();
 		//this.game.world.setBounds(-4000, -4000, 8000, 8000);
 		//this.game.physics.startSystem(Phaser.Physics.P2JS);
 		this.game.physics.startSystem(Phaser.Physics.ARCADE);

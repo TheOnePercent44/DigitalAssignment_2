@@ -47,8 +47,8 @@ RPGGame.Preloader.prototype = {
 	create: function () {
 
 		//	Once the load has finished we disable the crop because we're going to sit in the update loop for a short while as the music decodes
-		//this.preloadBar.cropEnabled = false;
-		this.state.start('GameWorld');
+		this.preloadBar.cropEnabled = false;
+		//this.state.start('GameWorld');
 	},
 
 	update: function () {
