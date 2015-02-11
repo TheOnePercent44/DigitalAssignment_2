@@ -24,15 +24,15 @@ RPGGame.GameWorld = function (game) {
 
 };
 
-var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer, wallsCG, playerCG;
+var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer, wallsCG, playerCG, catsCG;
 var speed = 200, hope, HOPEMAX, courage, COURAGEMAX, hopebar, hopeback, hopefore;
 var time1, cropbox;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
 		//this.game.world.setBounds(-4000, -4000, 8000, 8000);
-		//this.game.physics.startSystem(Phaser.Physics.P2JS);
-		this.game.physics.startSystem(Phaser.Physics.ARCADE);
+		this.game.physics.startSystem(Phaser.Physics.P2JS);
+		//this.game.physics.startSystem(Phaser.Physics.ARCADE);
 		//this.game.physics.p2.setImpactEvents(true);
 		//wallsCG = this.game.physics.p2.createCollisionGroup();
 		//playerCG = this.game.physics.p2.createCollisionGroup();
@@ -49,8 +49,8 @@ RPGGame.GameWorld.prototype = {
 		catfriend = this.game.add.sprite(30, 30, 'cat', 2);
 		//CollisionLayer = map.createLayer('Layer3');
 		
-		this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
-		//this.game.physics.enable(catfriend, Phaser.Physics.P2JS);
+		//this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
+		this.game.physics.enable(catfriend, Phaser.Physics.P2JS);
 		catfriend.anchor.setTo(0.5, 0.5);
 		catfriend.debug = true;
 		//catfriend.body.collideWorldBounds = true;
@@ -68,7 +68,7 @@ RPGGame.GameWorld.prototype = {
 		//this.game.camera.follow(catfriend, this.game.camera.FOLLOW_TOPDOWN_TIGHT);
 		//this.game.camera.update();
 		
-		/*catfriend.body.setCollisionGroup(playerCG);
+		catfriend.body.setCollisionGroup(playerCG);
 		catfriend.body.collides(playerCG);
 		catfriend.body.collides(wallsCG);
 		walls = this.game.physics.p2.convertCollisionObjects(map, "Layer3", true);
@@ -76,8 +76,7 @@ RPGGame.GameWorld.prototype = {
 		{
 			walls[wall].setCollisionGroup(wallsCG);
 			walls[wall].collides(playerCG);
-			//walls[wall].collides(playerperson);
-		}*/
+		}
 		
 		collectioncats = this.game.add.group();
 		collectioncats.enableBody = true;
@@ -116,7 +115,7 @@ RPGGame.GameWorld.prototype = {
     },
 
     update: function () {
-		this.game.physics.arcade.collide(catfriend, 'Layer1');
+		this.game.physics.arcade.collide(catfriend, layer1);
 		//Phaser.Physics.Arcade.collide(catfriend, layer1);//not a function
 		this.game.physics.arcade.overlap(catfriend, collectioncats, gainCat);
 		if(this.game.time.now-time1 > 3000)
