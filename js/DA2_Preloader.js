@@ -12,6 +12,7 @@ RPGGame.Preloader.prototype = {
 
 	preload: function () {
 
+		this.ready = false;
 		//	These are the assets we loaded in Boot.js
 		//	A nice sparkly background and a loading progress bar
 		this.background = this.add.sprite(300, 400, 'preloaderBarBackground');

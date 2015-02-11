@@ -155,7 +155,7 @@ RPGGame.GameWorld.prototype = {
 		//hopebar.cropEnabled = true;
 		HOPEMAX = 300;
 		//COURAGEMAX = 100;
-		hope = 200;//HOPEMAX;
+		hope = 150;//HOPEMAX;
 		//courage = 50;
 		//console.log("width: %d, Height: %d", hopebar.width, hopebar.height);//debug
 		//cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, (hope/HOPEMAX)*hopebar.width, hopebar.height);
