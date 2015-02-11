@@ -30,51 +30,58 @@ body
 
 <div id="game"></div>
 <div id="readme">
-<h2>Kitten Carrier</h2>
+<h2>Lost Kittens</h2>
 <ul>
 
 <li><strong>High Concept:</strong>
-You are running away from a dog catcher (for you are a dog) and you must not trip over logs and be caught or get mauled by bear traps.
+You and your friends (all cats) have become lost in a strange and scary place. Find your friends and try not to lose hope!
 </li>
 
 <li><strong>Player Experience Goals:</strong>
-I want the player to feel analog level control by using the mouse rather than the keys
+The player should feel pressed for time and required to make quick decisions. In its present form, the game should be a sample of rapidly growing dread as "hope" vanishes faster the more you lose, keeping the excitement high.
 </li>
 
 <li><strong>Genre:</strong>
-Shitty infinite side scroller
+Roguelike Speed Collector
 </li>
 
 <li><strong>Game play:</strong>
-The player can do two things: move vertically on the screen and jump. Moving horizontally is automatic and constant. The player moves up and down by moving the mouse up and down, and jumps by left clicking. The goal is not to hit anything on screen (carefuly, objects are larger than they appear).
+Use the WASD keys to move around (careful, only one direction at a time!) and collect all of the friendly cats! You will constantly lose hope unless you find more cats quick! Don't give in to despair!
 </li>
 
 <li><strong>Prototype goal:</strong>
-Analog mouse control over a digital space (pity the rest of the mechanics are too broken to properly evaluate it).
+Continuously draining resource that determines a losing condition, independent of the win condition.
 </li>
 
 <li><strong>Features:</strong>
-Errrrrr.... doubtful. It was a rough week. At least overlapping obstacles are easier to jump over. Score mechanic never implemented (was going to be distance based), and colliding with obstacles is easier than avoiding them. Also, infinite jumping, inspired by Sonic Boom (you can repeatedly jump forever)
+Currently Implemented:
+You have an amount of Hope (represented by the blue bar int he upper right corner). Hope drains constantly due to the scariness of the dungeon. You can move in a single direction at a time via the WASD keys and "pick up" your cat friends who are frozen in terror about the dungeon. An ominous ambience accompanies you, broken by the comforting sound of cat retrieval. 
+
+Planned Features:
+I had intended there to be monsters, giant rats, or some other enemy that would damage your hope further. To complement it I was working on giving the player cat an amount of courage that could be spent shooting raw bravery at the foes to dispatch them, and it would be replenishable by finding orange colored cats (who are more tigerlike and encouraging than the fearful.. uh, other colored cats. Seriously, I don't know what color they are). Unfortunately, seperate problems with each of these interdependant features prohibited me from implementing them in the time alloted.
+I have also considered maniplating the lighting (I assume Phaser has some way to manage that. Otherwise I could try faking it), making it darker throughout the dungeon and giving areas of light. Darker, "scarier" places would drain hope faster, and typically contain more enemies (see above).
+The map was intended to be larger, with the camera panning to follow the player, making the whole thing feel more maze like and harder to navigate. Unfortunately, the tileset I used was very small, prohibiting me from making this possible without finding another asset or making my own, neither of which I could afford. Upon simply making the map larger with the tile size I had in order to have a larger game world (and increase difficulty) I found the tilemap getting cut up. I disabled the camera again, essentially locking the player into the original corner of map.
+My playtester recommended powerups that would appear randomly and give temporary bonuses such as increased speed. I like this idea, and might implement it in the form of power orbs (catnip maybe?) or different colored cats.
 </li>
 
 <li><strong>Setting/Premise:</strong>
-You are a dog. A stray. And you are running for your life. Forever.
+You are a cat lost in some dungeon, seperated from your other cat friends.
 </li>
 
 <li><strong>Story:</strong>
-No story.
+You belong to a band of cats who are traveling, but you have become scattered and lost in a dungeon. You must find your friends and carry on before you become to scared to go on and starve to death.
 </li>
 
 <li><strong>Target Audience:</strong>
-Bored highschool kids (or college kids I guess, the only prerequisite is that they are seeking distraction from class).
+Challenge Seekers
 </li>
 
 <li><strong>Play time:</strong>
-0-30 seconds on average.
+
 </li>
 
 <li><strong>Strategies:</strong>
-Flight.
+Target clusters of cats first, starting nearest and moving farthest. Raising your Hope higher will cause it to deplete a little slower, so collecting several cats in quick succession gains you more time to travel further for farther cats.
 </li>
 
 <li><strong>Estimated Schedule:</strong>
@@ -82,15 +89,21 @@ Collision needs to be improved, level progression should be implemented, obstacl
 </li>
 
 <li><strong>Team:</strong>
-wut?
+Primary Dev: Anthony Sermania
+Confidence Booster: Rachel Yoder
+Playtester: Austin Alderete
 </li>
 
 <li><strong>Prototype Assets:</strong>
-Stolen everything from OpenArtWorld.com or whatever it was. Cool place, lots of stuff. Credit to the artists.
+Sprites and Tiles from OpenGameArt
+Cat pickup noise from OpenGameArt
+Tiles and Backgrounds are the work of Scott Matott
+<link=http://opengameart.org/users/qubodup>Dark Ambience Loop by Iwan Gabovitch</link>
+Main Menu "Mysterious Ambience: song21" credited to pixelsphere.org
 </li>
 
 <li><strong>Prototype Closest Other Game:</strong>
-Got the idea from Phaser following mechanics. Ripped it apart, stuffed some stuff in. Struggled with art assets actually. General map things. It was awful. But yeah, it resembles every shitty side scroller in existence I feel. Not my best attempt over all. Rather diappointed.
+I feel like there are many games where the main thing is picking up other things to win. I can't think of any off the top of my head that require you to do it in an amount of time equal to a replenishable and constantly depleting resource, but there must be something. Inspiration for the original concept can be said to be The Binding of Isaac, though it bears little resemblance in its current form and doubtfully would even in its ideally final form.
 </li>
 
 </ul>
