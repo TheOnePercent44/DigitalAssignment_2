@@ -92,9 +92,9 @@ RPGGame.GameWorld.prototype = {
 			collectioncats.add(newCat(this.game));
 		}
 		
-		//hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'barback');
-		//hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hope');//where did this go?
-		hopebar = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'hope');//none hopeback edition
+		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'barback');
+		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hope');//where did this go?
+		//hopebar = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'hope');//none hopeback edition
 		//hopebar.reset(hopeback.x, hopeback.y);
 		hopefore = this.game.add.sprite(hopeback.x, hopeback.y, 'barfore');
 		hopeback.scale.x = 0.5;
