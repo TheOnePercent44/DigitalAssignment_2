@@ -30,7 +30,7 @@ var time1, cropbox, permawidth;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
-		this.music = this.add.audio('gameMusic');
+		this.music = this.add.audio('gameMusic', 2, true);
 		this.music.play();
 		//this.game.world.setBounds(-4000, -4000, 8000, 8000);
 		//this.game.physics.startSystem(Phaser.Physics.P2JS);
@@ -200,6 +200,7 @@ RPGGame.GameWorld.prototype = {
     },
 	endGame: function(won)
 	{
+		this.music.stop();
 		if(won)
 			this.state.start('WinScreen');//display win screen
 		else
