@@ -89,6 +89,7 @@ RPGGame.GameWorld.prototype = {
 			catguy.setCollisionGroup(catsCG);
 			catguy.collides(playerCG);
 			collectioncats.add(catguy);
+			//collectioncats.add(newCat(this.game));
 		}*/
 		
 		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'barback');
@@ -123,7 +124,7 @@ RPGGame.GameWorld.prototype = {
     update: function () {
 		//this.game.physics.arcade.collide(catfriend, layer1);
 		//Phaser.Physics.Arcade.collide(catfriend, layer1);//not a function
-		this.game.physics.arcade.overlap(catfriend, collectioncats, gainCat);
+		//this.game.physics.arcade.overlap(catfriend, collectioncats, gainCat);
 		if(this.game.time.now-time1 > 3000)
 		{
 			hope -= 20;
