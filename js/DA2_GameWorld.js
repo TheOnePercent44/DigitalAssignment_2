@@ -329,8 +329,8 @@ function newCat(game)
 	game.physics.enable(meowcat, Phaser.Physics.ARCADE);
 	while(map.getTile(xcoord, ycoord, layer1) == null || game.physics.arcade.collide(meowcat, layer1) || game.physics.arcade.collide(meowcat, catfriend) || game.physics.arcade.collide(meowcat, collectioncats))
 	{
-		xcoord = game.rnd.integerInRange(16, 784);
-		ycoord = game.rnd.integerInRange(16, 784);
+		xcoord = game.rnd.integerInRange(16, 3200);
+		ycoord = game.rnd.integerInRange(16, 3200);
 		meowcat.kill();
 		meowcat.reset(xcoord, ycoord);
 	}
