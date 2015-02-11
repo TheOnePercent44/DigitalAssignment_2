@@ -284,8 +284,8 @@ RPGGame.GameWorld.prototype = {
 	endGame: function(won)
 	{
 		this.music.stop();
-		collectioncats.destroy();
-		catfriend.destroy();
+		//collectioncats.destroy();
+		//catfriend.destroy();
 		
 		if(won)
 			this.state.start('WinScreen');//display win screen
