@@ -26,7 +26,7 @@ RPGGame.GameWorld = function (game) {
 
 var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer, wallsCG, playerCG, catsCG;
 var speed = 200, hope, HOPEMAX, courage, COURAGEMAX, hopebar, hopeback, hopefore;
-var time1, cropbox;
+var time1, cropbox permawidth;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
@@ -96,19 +96,21 @@ RPGGame.GameWorld.prototype = {
 		//hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hope');//where did this go?
 		hopebar = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'hope');//none hopeback edition
 		//hopebar.reset(hopeback.x, hopeback.y);
-		//hopefore = this.game.add.sprite(hopeback.x, hopeback.y, 'barfore');
-		//hopeback.scale.x = 0.5;
-		//hopeback.scale.y = 0.5;
+		hopefore = this.game.add.sprite(hopeback.x, hopeback.y, 'barfore');
+		hopeback.scale.x = 0.5;
+		hopeback.scale.y = 0.5;
 		hopebar.scale.x = 0.5;
 		hopebar.scale.y = 0.5;
-		//hopefore.scale.x = 0.5;
-		//hopefore.scale.y = 0.5;
+		hopefore.scale.x = 0.5;
+		hopefore.scale.y = 0.5;
+		
+		permawidth = hopebar.width;
 		
 		//hopebar.cropEnabled = true;
 		HOPEMAX = 500;
 		hope = 325;//HOPEMAX;
 		console.log("width: %d, Height: %d", hopebar.width, hopebar.height);//debug
-		cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, (hope/HOPEMAX)*hopebar.width, hopebar.height);
+		//cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, (hope/HOPEMAX)*hopebar.width, hopebar.height);
 		//hopebar.crop = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
 		//hopebar.crop(cropbox);
 		//hopebar.cropRect = cropbox;
@@ -117,23 +119,25 @@ RPGGame.GameWorld.prototype = {
 		//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 		//hopebar.cropRect.setTo(hopebar.x, hopebar.y, (hope / HOPEMAX) * hopebar.width, hopebar.height);
 		//hopebar.updateCrop();
+		hopebar.width = (hope / HOPEMAX) * permawidth;
+		
 		time1 = this.game.time.now;
-		
-		
-		//this.game.world.scale = 4;
     },
 
     update: function () {
 		this.game.physics.arcade.collide(catfriend, layer1);
 		//Phaser.Physics.Arcade.collide(catfriend, layer1);//not a function
 		this.game.physics.arcade.overlap(catfriend, collectioncats, gainCat);
-		hopebar.updateCrop();
+		//hopebar.updateCrop();
+		//hopebar.width = (hope / HOPEMAX) * permawidth;
+		
 		if(this.game.time.now-time1 > 3000)
 		{
 			hope -= 20;
 			//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 			//hopebar.updateCrop();
 			//hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
+			hopebar.width = (hope / HOPEMAX) * permawidth;
 			time1 = this.game.time.now;
 		}
 		console.log("hope %d", hope);
