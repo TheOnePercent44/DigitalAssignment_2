@@ -43,6 +43,7 @@ RPGGame.GameWorld.prototype = {
 		map.addTilesetImage('doors_lronly', 'doors_lr');
 		layer0 = map.createLayer('Layer0');
 		layer1 = map.createLayer('Layer1');
+		layer1.debug = true;
 		layer2 = map.createLayer('Layer2');
 		//layer1.resizeWorld();
 		catfriend = this.game.add.sprite(30, 30, 'cat', 2);
@@ -63,7 +64,7 @@ RPGGame.GameWorld.prototype = {
 		//this.game.physics.arcade.TILE_BIAS = 50;
 		//this.game.camera.setSize(100, 100);
 		//this.game.camera.bounds = new Phaser.Rectangle(0, 0, 100,100);
-		this.game.camera.follow(catfriend, this.game.camera.FOLLOW_TOPDOWN_TIGHT);
+		//this.game.camera.follow(catfriend, this.game.camera.FOLLOW_TOPDOWN_TIGHT);
 		//this.game.camera.update();
 		
 		/*catfriend.body.setCollisionGroup(playerCG);
