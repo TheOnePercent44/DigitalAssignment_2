@@ -95,7 +95,7 @@ RPGGame.GameWorld.prototype = {
 			collectioncats.add(newCat(this.game));
 		}
 		
-		courageCats = this.game.add.group();
+		/*courageCats = this.game.add.group();
 		courageCats.enableBody = true;
 		courageCats.physicsBodyType = Phaser.Physics.ARCADE;
 		//collectioncats.setCollisionGroup(catsCG);
@@ -104,9 +104,9 @@ RPGGame.GameWorld.prototype = {
 			/*var catguy = newCat(this.game);
 			catguy.setCollisionGroup(catsCG);
 			catguy.collides(playerCG);
-			collectioncats.add(catguy);*/
+			collectioncats.add(catguy);
 			courageCats.add(newCCat(this.game));
-		}
+		}*/
 		
 		/*enemyGroup = this.game.add.group();
 		enemyGroup.enableBody = true;
@@ -133,7 +133,7 @@ RPGGame.GameWorld.prototype = {
 		hopefore.scale.x = 0.5;
 		hopefore.scale.y = 0.5;
 		
-		courageback = this.game.add.sprite(this.game.camera.width*0.5, this.game.camera.height*0.07, 'barback');
+		/*courageback = this.game.add.sprite(this.game.camera.width*0.5, this.game.camera.height*0.07, 'barback');
 		couragebar = this.game.add.sprite(courageback.x, courageback.y, 'courage');
 		couragefore = this.game.add.sprite(courageback.x, courageback.y, 'barfore');
 		courageback.scale.x = 0.5;
@@ -141,15 +141,15 @@ RPGGame.GameWorld.prototype = {
 		couragebar.scale.x = 0.5;
 		couragebar.scale.y = 0.5;
 		couragefore.scale.x = 0.5;
-		couragefore.scale.y = 0.5;
+		couragefore.scale.y = 0.5;*/
 		
-		permawidth = hopebar.width;
+		permawidth = hopeback.width;
 		
 		//hopebar.cropEnabled = true;
 		HOPEMAX = 300;
-		COURAGEMAX = 100;
+		//COURAGEMAX = 100;
 		hope = 200;//HOPEMAX;
-		courage = 50;
+		//courage = 50;
 		//console.log("width: %d, Height: %d", hopebar.width, hopebar.height);//debug
 		//cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, (hope/HOPEMAX)*hopebar.width, hopebar.height);
 		//hopebar.crop = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
@@ -161,18 +161,18 @@ RPGGame.GameWorld.prototype = {
 		//hopebar.cropRect.setTo(hopebar.x, hopebar.y, (hope / HOPEMAX) * hopebar.width, hopebar.height);
 		//hopebar.updateCrop();
 		hopebar.width = (hope / HOPEMAX) * permawidth;
-		couragebar.width = (courage / COURAGEMAX) * permawidth;
+		//couragebar.width = (courage / COURAGEMAX) * permawidth;
 		
 		time1 = this.game.time.now;
-		time2 = -1;
+		//time2 = -1;
     },
 
     update: function () {
 		this.game.physics.arcade.collide(catfriend, layer1);
 		//Phaser.Physics.Arcade.collide(catfriend, layer1);//not a function
 		this.game.physics.arcade.collide(catfriend, collectioncats, gainCat);
-		this.game.physics.arcade.collide(catfriend, courageCats, gainCCat);
-		if(collectioncats.countLiving()+courageCats.countLiving() === 0)
+		//this.game.physics.arcade.collide(catfriend, courageCats, gainCCat);
+		if(collectioncats.countLiving()/*+courageCats.countLiving()*/ === 0)
 			this.endGame(this, true);
 		//hopebar.updateCrop();
 		//hopebar.width = (hope / HOPEMAX) * permawidth;
@@ -231,7 +231,7 @@ RPGGame.GameWorld.prototype = {
 			catfriend.animations.stop(null, true);
 		}
 		
-		if(this.game.input.keyboard.isDown(Phaser.Keyboard.UP) && this.game.time.now-time2 >= 1000)
+		/*if(this.game.input.keyboard.isDown(Phaser.Keyboard.UP) && this.game.time.now-time2 >= 1000)
 		{
 			fireShot(0, this.game);
 		}
@@ -246,7 +246,7 @@ RPGGame.GameWorld.prototype = {
 		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT) && this.game.time.now-time2 >= 1000)
 		{
 			fireShot(3, this.game);
-		}
+		}*/
     },
 
     quitGame: function (pointer) {
@@ -274,7 +274,7 @@ RPGGame.GameWorld.prototype = {
 
 };
 
-function fireShot(direction, game)
+/*function fireShot(direction, game)
 {
 	if(direction === 0)
 	{}//shoot up
@@ -287,9 +287,9 @@ function fireShot(direction, game)
 	
 	courage -= 5;
 	time2 = game.time.now;
-}
+};*/
 
-function newBaddie(game)
+/*function newBaddie(game)
 {
 	var xcoord, ycoord;
 	
@@ -309,7 +309,7 @@ function newBaddie(game)
 	//meowcat.animations.play('jumpRight', 5, true);
 	
 	return mummy;
-};
+};*/
 
 function newCat(game)
 {
@@ -348,7 +348,7 @@ function gainCat(player, cat) {
 	hopebar.width = (hope / HOPEMAX) * permawidth;
 };
 
-function newCCat(game)
+/*function newCCat(game)
 {
 	var xcoord, ycoord;
 	
@@ -383,4 +383,4 @@ function gainCCat(player, cat) {
 		courage = COURAGEMAX;
 	
 	couragebar.width = (courage/COURAGEMAX)*permawidth;
-};
+};*/
