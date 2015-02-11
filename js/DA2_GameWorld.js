@@ -204,7 +204,7 @@ RPGGame.GameWorld.prototype = {
 			this.state.start('WinScreen');//display win screen
 		else
 			this.state.start('LoseScreen');//display lose screen
-	},/*,
+	}/*,
 	
 	render: function() {
 
