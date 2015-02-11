@@ -20,7 +20,7 @@ RPGGame.MainMenu.prototype = {
 		//add text
 
 		//this.playButton = this.add.button(400, 600, 'playButton', this.startGame, this, 'buttonOver', 'buttonOut', 'buttonOver');
-		this.playButton = this.add.button(this.game.world.centerX-80, 400, 'button', this.actionOnClick, this, 1, 0, 2);
+		this.playButton = this.add.button(this.game.world.centerX-80, 400, 'button', startGame, this, 1, 0, 2);
 
 	},
 
@@ -38,10 +38,6 @@ RPGGame.MainMenu.prototype = {
 		//	And start the actual game
 		this.state.start('Game');
 
-	},
-	
-	actiononClick: function(pointer) {
-		this.startGame(pointer);
 	}
 
 };
