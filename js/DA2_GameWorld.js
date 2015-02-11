@@ -231,5 +231,6 @@ function gainCat(player, cat) {
 	hope += 20;
 	if(hope > HOPEMAX)
 		hope = HOPEMAX;
-
+	
+	hopebar.width = (hope / HOPEMAX) * permawidth;
 };
