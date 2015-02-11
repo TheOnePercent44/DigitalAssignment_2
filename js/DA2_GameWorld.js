@@ -32,7 +32,7 @@ RPGGame.GameWorld.prototype = {
     create: function () {
 		this.music = this.add.audio('gameMusic', 1.5, true);
 		this.music.play();
-		this.game.world.setBounds(0, 0, 4000, 4000);//widenbounds for tilemap load?
+		//this.game.world.setBounds(0, 0, 4000, 4000);//widenbounds for tilemap load?
 		//this.game.physics.startSystem(Phaser.Physics.P2JS);
 		this.game.physics.startSystem(Phaser.Physics.ARCADE);
 		/*this.game.physics.p2.setImpactEvents(true);
@@ -67,8 +67,8 @@ RPGGame.GameWorld.prototype = {
 		//this.game.physics.arcade.collide(catfriend, layer1);
 		//this.game.physics.arcade.TILE_BIAS = 50;
 		//this.game.camera.setSize(100, 100);
-		this.game.camera.bounds = new Phaser.Rectangle(0, 0, 3216,3216);
-		this.game.camera.follow(catfriend, this.game.camera.FOLLOW_TOPDOWN_TIGHT);
+		//this.game.camera.bounds = new Phaser.Rectangle(0, 0, 3216,3216);
+		//this.game.camera.follow(catfriend, this.game.camera.FOLLOW_TOPDOWN_TIGHT);
 		//this.game.camera.update();
 		
 		/*catfriend.body.setCollisionGroup(playerCG);
@@ -239,7 +239,7 @@ RPGGame.GameWorld.prototype = {
 			catfriend.animations.stop(null, true);
 		}
 		
-		if(this.game.time.now-cattime > 4000)
+		/*if(this.game.time.now-cattime > 4000)
 		{
 			if(catstopped === true)
 			{
@@ -252,7 +252,7 @@ RPGGame.GameWorld.prototype = {
 				catstopped = true;
 			}
 		}
-		else{}//do nothing
+		else{}//do nothing*/
 		
 		/*if(this.game.input.keyboard.isDown(Phaser.Keyboard.UP) && this.game.time.now-time2 >= 1000)
 		{
@@ -338,15 +338,15 @@ function newCat(game)
 {
 	var xcoord, ycoord;
 	
-	xcoord = game.rnd.integerInRange(16, 3184);
-	ycoord = game.rnd.integerInRange(16, 3168);
+	xcoord = game.rnd.integerInRange(16, 768);
+	ycoord = game.rnd.integerInRange(16, 768);
 	
 	var meowcat = game.add.sprite(xcoord, ycoord, 'cat', 2);
 	game.physics.enable(meowcat, Phaser.Physics.ARCADE);
 	while(game.physics.arcade.collide(meowcat, layer1) || game.physics.arcade.collide(meowcat, catfriend) || game.physics.arcade.collide(meowcat, collectioncats))
 	{
-		xcoord = game.rnd.integerInRange(16, 3184);
-		ycoord = game.rnd.integerInRange(16, 3168);
+		xcoord = game.rnd.integerInRange(16, 768);
+		ycoord = game.rnd.integerInRange(16, 768);
 		meowcat.kill();
 		meowcat.reset(xcoord, ycoord);
 	}
@@ -371,7 +371,7 @@ function gainCat(player, cat) {
 	hopebar.width = (hope / HOPEMAX) * permawidth;
 };
 
-var speed = [100, -100];
+/*var speed = [100, -100];
 function moveCat(cat, game)
 {
 	var xspeed = speed[game.rnd.integerInRange(0, 1)];
@@ -384,7 +384,7 @@ function stopCat(cat)
 {
 	cat.body.velocity.x = 0;
 	cat.body.velocity.y = 0;
-};
+};*/
 
 /*function newCCat(game)
 {
