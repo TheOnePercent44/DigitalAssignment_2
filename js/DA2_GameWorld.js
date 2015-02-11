@@ -95,7 +95,20 @@ RPGGame.GameWorld.prototype = {
 			collectioncats.add(newCat(this.game));
 		}
 		
-		enemyGroup = this.game.add.group();
+		courageCats = this.game.add.group();
+		courageCats.enableBody = true;
+		courageCats.physicsBodyType = Phaser.Physics.ARCADE;
+		//collectioncats.setCollisionGroup(catsCG);
+		for(var i = 0; i < 10; i++)
+		{
+			/*var catguy = newCat(this.game);
+			catguy.setCollisionGroup(catsCG);
+			catguy.collides(playerCG);
+			collectioncats.add(catguy);*/
+			courageCats.add(newCCat(this.game));
+		}
+		
+		/*enemyGroup = this.game.add.group();
 		enemyGroup.enableBody = true;
 		enemyGroup.physicsBodyType = Phaser.Physics.ARCADE;
 		//collectioncats.setCollisionGroup(catsCG);
@@ -104,9 +117,9 @@ RPGGame.GameWorld.prototype = {
 			/*var catguy = newCat(this.game);
 			catguy.setCollisionGroup(catsCG);
 			catguy.collides(playerCG);
-			collectioncats.add(catguy);*/
+			collectioncats.add(catguy);
 			enemyGroup.add(newBaddie(this.game));
-		}
+		}*/
 		
 		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'barback');
 		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hope');//where did this go?
@@ -144,7 +157,8 @@ RPGGame.GameWorld.prototype = {
 		this.game.physics.arcade.collide(catfriend, layer1);
 		//Phaser.Physics.Arcade.collide(catfriend, layer1);//not a function
 		this.game.physics.arcade.collide(catfriend, collectioncats, gainCat);
-		if(collectioncats.countLiving() === 0)
+		this.game.physics.arcade.collide(catfriend, courageCats, gainCCat);
+		if(collectioncats.countLiving()+courageCats.countLiving() === 0)
 			this.endGame(this, true);
 		//hopebar.updateCrop();
 		//hopebar.width = (hope / HOPEMAX) * permawidth;
@@ -268,6 +282,7 @@ function newCat(game)
 		meowcat.reset(xcoord, ycoord);
 	}
 	meowcat.animations.add('jumpRight', [2, 3]);
+	meowcat.animations.add('jumpLeft', [1, 0]);
 	meowcat.animations.play('jumpRight', 5, true);
 	
 	return meowcat;
@@ -285,4 +300,41 @@ function gainCat(player, cat) {
 		hope = HOPEMAX;
 	
 	hopebar.width = (hope / HOPEMAX) * permawidth;
+};
+
+function newCCat(game)
+{
+	var xcoord, ycoord;
+	
+	xcoord = game.rnd.integerInRange(16, 784);
+	ycoord = game.rnd.integerInRange(16, 784);
+	
+	var meowcat = game.add.sprite(xcoord, ycoord, 'orangecat', 2);
+	game.physics.enable(meowcat, Phaser.Physics.ARCADE);
+	while(game.physics.arcade.collide(meowcat, layer1) || game.physics.arcade.collide(meowcat, catfriend))
+	{
+		xcoord = game.rnd.integerInRange(16, 784);
+		ycoord = game.rnd.integerInRange(16, 784);
+		meowcat.kill();
+		meowcat.reset(xcoord, ycoord);
+	}
+	meowcat.animations.add('jumpRight', [2, 3]);
+	meowcat.animations.add('jumpLeft', [1, 0]);
+	meowcat.animations.play('jumpRight', 5, true);
+	
+	return meowcat;
+};
+
+function gainCCat(player, cat) {
+
+	// Remove cat (or replace with follower?)
+	cat.kill();
+	//cat = new follower?
+
+	//Restore Hope and/or Courage
+	courage += 20;
+	if(courage > COURAGEMAX)
+		courage = COURAGEMAX;
+	
+	//hopebar.width = (hope / HOPEMAX) * permawidth;
 };

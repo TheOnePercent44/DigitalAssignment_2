@@ -39,6 +39,8 @@ RPGGame.Preloader.prototype = {
 		this.load.image('barback', 'assets/barbackground_256x32.png');
 		this.load.image('barfore', 'assets/barforeground1_256x32.png');
 		this.load.image('hope', 'assets/enemy_mana_bar_001.png');
+		this.load.image('mummy', 'assets/metalslug_mummy37x45.png');
+		this.load.image('orangecat', 'assets/orangecat.png');
 		
 		//	+ lots of other required assets here
 
