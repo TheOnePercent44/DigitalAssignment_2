@@ -137,7 +137,10 @@ RPGGame.GameWorld.prototype = {
 		{
 			hope -= 20;	
 			if(hope <= 0)
+			{
 				hope = 0;//also end the game
+				endGame(false);
+			}
 			//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 			//hopebar.updateCrop();
 			//hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
@@ -235,4 +238,12 @@ function gainCat(player, cat) {
 		hope = HOPEMAX;
 	
 	hopebar.width = (hope / HOPEMAX) * permawidth;
+};
+
+function endGame(won)
+{
+	if(won)
+		this.state.start('WinScreen');//display win screen
+	else
+		this.state.start('LoseScreen');//display lose screen
 };

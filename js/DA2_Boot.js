@@ -60,6 +60,8 @@ window.onload = function() {
 	game.state.add('Preloader', RPGGame.Preloader);
 	game.state.add('MainMenu', RPGGame.MainMenu);
 	game.state.add('GameWorld', RPGGame.GameWorld);
+	game.state.add('WinScreen', RPGGame.WinScreen);
+	game.state.add('LoseScreen', RPGGame.LoseScreen);
 	//game.state.add('GameBattle', RPGGame.GameBattle);
 	//	Now start the Boot state.
 	game.state.start('Boot');
