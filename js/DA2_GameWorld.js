@@ -31,12 +31,12 @@ RPGGame.GameWorld.prototype = {
 	
     create: function () {
 		//this.game.world.setBounds(-4000, -4000, 8000, 8000);
-		this.game.physics.startSystem(Phaser.Physics.P2JS);
-		//this.game.physics.startSystem(Phaser.Physics.ARCADE);
-		this.game.physics.p2.setImpactEvents(true);
+		//this.game.physics.startSystem(Phaser.Physics.P2JS);
+		this.game.physics.startSystem(Phaser.Physics.ARCADE);
+		/*this.game.physics.p2.setImpactEvents(true);
 		wallsCG = this.game.physics.p2.createCollisionGroup();
 		playerCG = this.game.physics.p2.createCollisionGroup();
-		catsCG = this.game.physics.p2.createCollisionGroup();
+		catsCG = this.game.physics.p2.createCollisionGroup();*/
 		
 		map = this.game.add.tilemap('map');
 		map.addTilesetImage('stone_walls', 'stonewalls');
@@ -50,8 +50,8 @@ RPGGame.GameWorld.prototype = {
 		catfriend = this.game.add.sprite(30, 30, 'cat', 2);
 		//CollisionLayer = map.createLayer('Layer3');
 		
-		//this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
-		this.game.physics.enable(catfriend, Phaser.Physics.P2JS);
+		this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
+		//this.game.physics.enable(catfriend, Phaser.Physics.P2JS);
 		catfriend.anchor.setTo(0.5, 0.5);
 		catfriend.debug = true;
 		//catfriend.body.collideWorldBounds = true;
@@ -69,7 +69,7 @@ RPGGame.GameWorld.prototype = {
 		//this.game.camera.follow(catfriend, this.game.camera.FOLLOW_TOPDOWN_TIGHT);
 		//this.game.camera.update();
 		
-		catfriend.body.setCollisionGroup(playerCG);
+		/*catfriend.body.setCollisionGroup(playerCG);
 		catfriend.body.collides(playerCG);
 		catfriend.body.collides(wallsCG);
 		catfriend.body.collides(catsCG);
@@ -78,9 +78,9 @@ RPGGame.GameWorld.prototype = {
 		{
 			walls[wall].setCollisionGroup(wallsCG);
 			walls[wall].collides(playerCG);
-		}
+		}*/
 		
-		/*collectioncats = this.game.add.group();
+		collectioncats = this.game.add.group();
 		collectioncats.enableBody = true;
 		//collectioncats.setCollisionGroup(catsCG);
 		for(var i = 0; i < 25; i++)
@@ -90,7 +90,7 @@ RPGGame.GameWorld.prototype = {
 			catguy.collides(playerCG);
 			collectioncats.add(catguy);
 			//collectioncats.add(newCat(this.game));
-		}*/
+		}
 		
 		hopeback = this.game.add.sprite(this.game.camera.width*0.75, this.game.camera.height*0.07, 'barback');
 		hopebar = this.game.add.sprite(hopeback.x, hopeback.y, 'hope');//where did this go?
@@ -122,9 +122,9 @@ RPGGame.GameWorld.prototype = {
     },
 
     update: function () {
-		//this.game.physics.arcade.collide(catfriend, layer1);
+		this.game.physics.arcade.collide(catfriend, layer1);
 		//Phaser.Physics.Arcade.collide(catfriend, layer1);//not a function
-		//this.game.physics.arcade.overlap(catfriend, collectioncats, gainCat);
+		this.game.physics.arcade.overlap(catfriend, collectioncats, gainCat);
 		if(this.game.time.now-time1 > 3000)
 		{
 			hope -= 20;
