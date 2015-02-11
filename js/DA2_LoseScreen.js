@@ -19,7 +19,7 @@ RPGGame.LoseScreen = function (game) {
 
 RPGGame.LoseScreen.prototype = {
 	create: function () {
-		var text = this.game.add.text(this.game.world.centerX/2, this.game.world.centerY, "Congratulations!", { font: "65px Arial", fill: "#FFFFFF", align: "center" });
+		var text = this.game.add.text(this.game.world.centerX*0.3, this.game.world.centerY*0.75, "Congratulations!", { font: "65px Arial", fill: "#FFFFFF", align: "center" });
 	},
 
 	update: function () {
