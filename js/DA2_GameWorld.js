@@ -246,7 +246,7 @@ function newCat(game)
 	
 	var meowcat = game.add.sprite(xcoord, ycoord, 'cat', 2);
 	game.physics.enable(meowcat, Phaser.Physics.ARCADE);
-	while(game.physics.arcade.collide(meowcat, layer1) || game.physics.arcade.overlap(meowcat, catfriend))
+	while(game.physics.arcade.collide(meowcat, layer1) || game.physics.arcade.collide(meowcat, catfriend))
 	{
 		xcoord = game.rnd.integerInRange(16, 784);
 		ycoord = game.rnd.integerInRange(16, 784);
