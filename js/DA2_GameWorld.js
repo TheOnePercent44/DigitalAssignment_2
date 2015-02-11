@@ -84,6 +84,7 @@ RPGGame.GameWorld.prototype = {
 		
 		collectioncats = this.game.add.group();
 		collectioncats.enableBody = true;
+		collectioncats.physicsBodyType = Phaser.Physics.ARCADE;
 		//collectioncats.setCollisionGroup(catsCG);
 		for(var i = 0; i < 25; i++)
 		{
@@ -214,6 +215,28 @@ RPGGame.GameWorld.prototype = {
 
 };
 
+function newBaddie(game)
+{
+	var xcoord, ycoord;
+	
+	xcoord = game.rnd.integerInRange(50, 784);
+	ycoord = game.rnd.integerInRange(50, 784);
+	
+	var mummy = game.add.sprite(xcoord, ycoord, 'mummy', 2);
+	game.physics.enable(meowcat, Phaser.Physics.ARCADE);
+	while(game.physics.arcade.collide(mummy, layer1) || game.physics.arcade.overlap(mummy, catfriend))
+	{
+		xcoord = game.rnd.integerInRange(50, 784);
+		ycoord = game.rnd.integerInRange(50, 784);
+		mummy.kill();
+		mummy.reset(xcoord, ycoord);
+	}
+	//mummy.animations.add('jumpRight', [2, 3]);
+	//meowcat.animations.play('jumpRight', 5, true);
+	
+	return mummy;
+};
+
 function newCat(game)
 {
 	var xcoord, ycoord;
@@ -223,7 +246,7 @@ function newCat(game)
 	
 	var meowcat = game.add.sprite(xcoord, ycoord, 'cat', 2);
 	game.physics.enable(meowcat, Phaser.Physics.ARCADE);
-	while(game.physics.arcade.collide(meowcat, map.layer1))
+	while(game.physics.arcade.collide(meowcat, layer1) || game.physics.arcade.overlap(meowcat, catfriend))
 	{
 		xcoord = game.rnd.integerInRange(16, 784);
 		ycoord = game.rnd.integerInRange(16, 784);
