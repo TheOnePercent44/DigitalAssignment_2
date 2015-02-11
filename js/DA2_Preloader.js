@@ -43,6 +43,7 @@ RPGGame.Preloader.prototype = {
 		this.load.image('courage', 'assets/enemy_health_bar_001.png');
 		this.load.image('mummy', 'assets/metalslug_mummy37x45.png');
 		this.load.spritesheet('orangecat', 'assets/orangecat.png', 16, 16);
+		this.load.audio('healnoise', ['assets/healspell2.aif'])
 		
 		//	+ lots of other required assets here
 
