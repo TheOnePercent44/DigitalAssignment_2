@@ -99,14 +99,14 @@ RPGGame.GameWorld.prototype = {
 		courageCats.enableBody = true;
 		courageCats.physicsBodyType = Phaser.Physics.ARCADE;
 		//collectioncats.setCollisionGroup(catsCG);
-		/*for(var i = 0; i < 10; i++)
+		for(var i = 0; i < 10; i++)
 		{
 			/*var catguy = newCat(this.game);
 			catguy.setCollisionGroup(catsCG);
 			catguy.collides(playerCG);
-			collectioncats.add(catguy);
+			collectioncats.add(catguy);*/
 			courageCats.add(newCCat(this.game));
-		}*/
+		}
 		
 		/*enemyGroup = this.game.add.group();
 		enemyGroup.enableBody = true;
@@ -318,9 +318,9 @@ function newCCat(game)
 		ccat.kill();
 		ccat.reset(xcoord, ycoord);
 	}
-	ccat.animations.add('jumpRightC', [2, 3]);
-	ccat.animations.add('jumpLeftC', [1, 0]);
-	ccat.animations.play('jumpRightC', 5, true);
+	//ccat.animations.add('jumpRightC', [2, 3]);
+	//ccat.animations.add('jumpLeftC', [1, 0]);
+	//ccat.animations.play('jumpRightC', 5, true);
 	
 	return ccat;
 };
