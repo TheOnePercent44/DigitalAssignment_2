@@ -115,7 +115,7 @@ RPGGame.GameWorld.prototype = {
     },
 
     update: function () {
-		this.game.physics.arcade.collide(catfriend, layer1);
+		//this.game.physics.arcade.collide(catfriend, layer1);
 		//Phaser.Physics.Arcade.collide(catfriend, layer1);//not a function
 		this.game.physics.arcade.overlap(catfriend, collectioncats, gainCat);
 		if(this.game.time.now-time1 > 3000)
