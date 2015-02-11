@@ -133,7 +133,9 @@ RPGGame.GameWorld.prototype = {
 		
 		if(this.game.time.now-time1 > 3000)
 		{
-			hope -= 20;
+			hope -= 20;	
+			if(hope <= 0)
+				hope = 0;//also end the game
 			//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 			//hopebar.updateCrop();
 			//hopebar.crop.width = (hope / HOPEMAX) * hopebar.width;
@@ -141,8 +143,6 @@ RPGGame.GameWorld.prototype = {
 			time1 = this.game.time.now;
 		}
 		console.log("hope %d", hope);
-		if(hope <= 0)
-			hope = 0;//also end the game
 		
 		//this.game.physics.p2.collide(playerCG, wallsCG);//invalid function
 		
