@@ -136,35 +136,35 @@ RPGGame.GameWorld.prototype = {
 		if(this.game.input.keyboard.isDown(Phaser.Keyboard.A))
 		{
 			//catfriend.body.x -= speed;
-			catfriend.velocity.y = 0;
-			catfriend.velocity.x = -speed;
+			catfriend.body.velocity.y = 0;
+			catfriend.body.velocity.x = -speed;
 			catfriend.animations.play('walkLeft', 20, true);
 		}
 		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.D))
 		{
 			//catfriend.body.x += speed;
-			catfriend.velocity.y = 0;
+			catfriend.body.velocity.y = 0;
 			catfriend.body.velocity.x = speed;
 			catfriend.animations.play('walkRight', 20, true);
 		}		
 		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.W))
 		{
 			//catfriend.body.y -= speed;
-			catfriend.velocity.x = 0;
-			catfriend.velocity.y = -speed;
+			catfriend.body.velocity.x = 0;
+			catfriend.body.velocity.y = -speed;
 			catfriend.animations.play('walkLeft', 20, true);
 		}
 		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.S))
 		{
 			//catfriend.body.y += speed;
-			catfriend.velocity.x = 0;
-			catfriend.velocity.y = speed;
+			catfriend.body.velocity.x = 0;
+			catfriend.body.velocity.y = speed;
 			catfriend.animations.play('walkRight', 20, true);
 		}
 		else
 		{
-			catfriend.velocity.x = 0;
-			catfriend.velocity.y = 0;
+			catfriend.body.velocity.x = 0;
+			catfriend.body.velocity.y = 0;
 			catfriend.animations.stop(null, true);
 		}
     },
