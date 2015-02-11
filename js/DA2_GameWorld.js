@@ -233,7 +233,6 @@ function gainCat(player, cat) {
 	// Remove cat (or replace with follower?)
 	cat.kill();
 	//cat = new follower?
-	if 
 
 	//Restore Hope and/or Courage
 	hope += 20;
