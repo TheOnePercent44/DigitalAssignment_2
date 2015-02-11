@@ -18,5 +18,11 @@ RPGGame.LoseScreen = function (game) {
 };
 
 RPGGame.LoseScreen.prototype = {
-	var text = this.game.add.text(this.game.world.centerX, this.game.world.centerY, "You lose!", { font: "65px Arial", fill: "#000000", align: "center" });
+	create: function () {
+		var text = this.game.add.text(this.game.world.centerX, this.game.world.centerY, "Congratulations!", { font: "65px Arial", fill: "#FFFFFF", align: "center" });
+	},
+
+	update: function () {
+		//return to menu somehow
+	}
 };

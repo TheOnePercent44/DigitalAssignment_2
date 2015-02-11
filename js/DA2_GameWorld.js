@@ -111,7 +111,7 @@ RPGGame.GameWorld.prototype = {
 		//hopebar.cropEnabled = true;
 		HOPEMAX = 500;
 		hope = 325;//HOPEMAX;
-		console.log("width: %d, Height: %d", hopebar.width, hopebar.height);//debug
+		//console.log("width: %d, Height: %d", hopebar.width, hopebar.height);//debug
 		//cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, (hope/HOPEMAX)*hopebar.width, hopebar.height);
 		//hopebar.crop = new Phaser.Rectangle(hopebar.x, hopebar.y, hopebar.width, hopebar.height);
 		//hopebar.crop(cropbox);
