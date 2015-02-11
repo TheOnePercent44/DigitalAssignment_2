@@ -26,7 +26,7 @@ RPGGame.GameWorld = function (game) {
 
 var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer, wallsCG, playerCG, catsCG;
 var speed = 100, hope, HOPEMAX, courage, COURAGEMAX, hopebar, hopeback, hopefore;
-var time1, cropbox, permawidth, collectioncats, courageCats;
+var time1, time2, cropbox, permawidth, collectioncats, courageCats;
 RPGGame.GameWorld.prototype = {
 	
     create: function () {
@@ -146,9 +146,9 @@ RPGGame.GameWorld.prototype = {
 		permawidth = hopebar.width;
 		
 		//hopebar.cropEnabled = true;
-		HOPEMAX = 500;
+		HOPEMAX = 300;
 		COURAGEMAX = 100;
-		hope = 320;//HOPEMAX;
+		hope = 200;//HOPEMAX;
 		courage = 50;
 		//console.log("width: %d, Height: %d", hopebar.width, hopebar.height);//debug
 		//cropbox = new Phaser.Rectangle(hopebar.x, hopebar.y, (hope/HOPEMAX)*hopebar.width, hopebar.height);
@@ -164,6 +164,7 @@ RPGGame.GameWorld.prototype = {
 		couragebar.width = (courage / COURAGEMAX) * permawidth;
 		
 		time1 = this.game.time.now;
+		time2 = -1;
     },
 
     update: function () {
@@ -176,9 +177,9 @@ RPGGame.GameWorld.prototype = {
 		//hopebar.updateCrop();
 		//hopebar.width = (hope / HOPEMAX) * permawidth;
 		
-		if(this.game.time.now-time1 > 3000)
+		if(this.game.time.now-time1 > 2500)
 		{
-			hope -= 20;	
+			hope -= 12;	
 			if(hope <= 0)
 			{
 				hope = 0;//also end the game
@@ -229,6 +230,23 @@ RPGGame.GameWorld.prototype = {
 			catfriend.body.velocity.y = 0;
 			catfriend.animations.stop(null, true);
 		}
+		
+		if(this.game.input.keyboard.isDown(Phaser.Keyboard.UP) && this.game.time.now-time2 >= 1000)
+		{
+			fireShot(0, this.game);
+		}
+		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT) && this.game.time.now-time2 >= 1000)
+		{
+			fireShot(1, this.game);
+		}
+		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.DOWN) && this.game.time.now-time2 >= 1000)
+		{
+			fireShot(2, this.game);
+		}
+		else if(this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT) && this.game.time.now-time2 >= 1000)
+		{
+			fireShot(3, this.game);
+		}
     },
 
     quitGame: function (pointer) {
@@ -255,6 +273,21 @@ RPGGame.GameWorld.prototype = {
 	}*/
 
 };
+
+function fireShot(direction, game)
+{
+	if(direction === 0)
+	{}//shoot up
+	else if(direction === 1)
+	{}//shoot right
+	else if(direction === 2)
+	{}//shoot down
+	else// if(direciton === 3)
+	{}//shoot left
+	
+	courage -= 5;
+	time2 = game.time.now;
+}
 
 function newBaddie(game)
 {
@@ -345,7 +378,7 @@ function gainCCat(player, cat) {
 	//cat = new follower?
 
 	//Restore Hope and/or Courage
-	courage += 20;
+	courage += 10;
 	if(courage > COURAGEMAX)
 		courage = COURAGEMAX;
 	
