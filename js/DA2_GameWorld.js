@@ -371,7 +371,7 @@ function gainCat(player, cat) {
 	hopebar.width = (hope / HOPEMAX) * permawidth;
 };
 
-var speed = [50, -50];
+var speed = [100, -100];
 function moveCat(cat, game)
 {
 	var xspeed = speed[game.rnd.integerInRange(0, 1)];
@@ -384,7 +384,7 @@ function stopCat(cat)
 {
 	cat.body.velocity.x = 0;
 	cat.body.velocity.y = 0;
-}
+};
 
 /*function newCCat(game)
 {
