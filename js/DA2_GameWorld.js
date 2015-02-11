@@ -82,7 +82,7 @@ RPGGame.GameWorld.prototype = {
 		
 		collectioncats = this.game.add.group();
 		collectioncats.enableBody = true;
-		collectioncats.body.setCollisionGroup(catsCG);
+		collectioncats.setCollisionGroup(catsCG);
 		for(var i = 0; i < 25; i++)
 		{
 			var catguy = newCat(this.game);
