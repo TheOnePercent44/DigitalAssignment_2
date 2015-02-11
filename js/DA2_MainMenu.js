@@ -18,7 +18,7 @@ RPGGame.MainMenu.prototype = {
 
 		//this.add.sprite(0, 0, 'titlepage');
 		//add text
-		var text = this.game.add.text(this.game.world.centerX, this.game.world.centerY-40, "The dungeon is dark and full of terror. Find your friends and find solace in each other. Use the WASD keys to move about and collect your friends to regain some hope. Find them all before despair claims you. Click the button to begin. Good luck.", { font: "65px Arial", fill: "#000000", align: "center" });
+		var text = this.game.add.text(this.game.world.centerX, this.game.world.centerY-40, "The dungeon is dark and full of terror. Find your friends and find solace in each other. Use the WASD keys to move about and collect your friends to regain some hope. Find them all before despair claims you. Click the button to begin. Good luck.", { font: "65px Arial", fill: "#FFFFFF", align: "center" });
 		//this.playButton = this.add.button(400, 600, 'playButton', this.startGame, this, 'buttonOver', 'buttonOut', 'buttonOver');
 		this.playButton = this.add.button(this.game.world.centerX, this.game.world.centerY+100, 'button', this.startGame, this, 1, 0, 2);
 

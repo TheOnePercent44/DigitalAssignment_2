@@ -130,6 +130,8 @@ RPGGame.GameWorld.prototype = {
 		this.game.physics.arcade.collide(catfriend, layer1);
 		//Phaser.Physics.Arcade.collide(catfriend, layer1);//not a function
 		this.game.physics.arcade.overlap(catfriend, collectioncats, gainCat);
+		if(collectioncats.countLiving() === 0)
+			endGame(this, true);
 		//hopebar.updateCrop();
 		//hopebar.width = (hope / HOPEMAX) * permawidth;
 		
@@ -139,7 +141,7 @@ RPGGame.GameWorld.prototype = {
 			if(hope <= 0)
 			{
 				hope = 0;//also end the game
-				endGame(false);
+				endGame(this, false);
 			}
 			//hopebar.cropRect.width = (hope / HOPEMAX) * hopebar.width;
 			//hopebar.updateCrop();
@@ -231,6 +233,7 @@ function gainCat(player, cat) {
 	// Remove cat (or replace with follower?)
 	cat.kill();
 	//cat = new follower?
+	if 
 
 	//Restore Hope and/or Courage
 	hope += 20;
@@ -240,10 +243,10 @@ function gainCat(player, cat) {
 	hopebar.width = (hope / HOPEMAX) * permawidth;
 };
 
-function endGame(won)
+function endGame(pointer, won)
 {
 	if(won)
-		this.state.start('WinScreen');//display win screen
+		pointer.state.start('WinScreen');//display win screen
 	else
-		this.state.start('LoseScreen');//display lose screen
+		pointer.state.start('LoseScreen');//display lose screen
 };
