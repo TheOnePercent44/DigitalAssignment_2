@@ -34,8 +34,9 @@ RPGGame.Boot.prototype = {
     preload: function () {
 
         //  Here we load the assets required for our preloader (in this case a background and a loading bar)
-        //this.load.image('preloaderBackground', 'images/preloader_background.jpg');
-        //this.load.image('preloaderBar', 'images/preloadr_bar.png');
+        this.load.image('preloaderBarBackground', 'assets/enemy_health_bar_background_000.png');
+        this.load.image('preloaderBar', 'assets/enemy_mana_bar_000.png');
+		this.load.image('preloaderBarForeground', 'assets/enemy_health_bar_foreground_002.png');
 
     },
 
