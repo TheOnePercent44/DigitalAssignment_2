@@ -46,7 +46,7 @@ RPGGame.GameWorld.prototype = {
 		map.addTilesetImage('doors_lronly', 'doors_lr');
 		layer0 = map.createLayer('Layer0');
 		layer1 = map.createLayer('Layer1');
-		layer1.debug = true;
+		//layer1.debug = true;
 		layer2 = map.createLayer('Layer2');
 		//layer1.resizeWorld();
 		catfriend = this.game.add.sprite(30, 30, 'cat', 2);
@@ -55,7 +55,7 @@ RPGGame.GameWorld.prototype = {
 		this.game.physics.enable(catfriend, Phaser.Physics.ARCADE);
 		//this.game.physics.enable(catfriend, Phaser.Physics.P2JS);
 		catfriend.anchor.setTo(0.5, 0.5);
-		catfriend.debug = true;
+		//catfriend.debug = true;
 		//catfriend.body.collideWorldBounds = true;
 		//catfriend.body.tilePadding.set(16, 16);
 		//map.setCollision([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31], true, layer1, true);
@@ -144,7 +144,7 @@ RPGGame.GameWorld.prototype = {
 			hopebar.width = (hope / HOPEMAX) * permawidth;
 			time1 = this.game.time.now;
 		}
-		console.log("hope %d", hope);
+		//console.log("hope %d", hope);
 		
 		//this.game.physics.p2.collide(playerCG, wallsCG);//invalid function
 		
