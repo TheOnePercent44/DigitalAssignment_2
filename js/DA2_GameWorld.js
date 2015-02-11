@@ -149,7 +149,7 @@ RPGGame.GameWorld.prototype = {
 			hopebar.width = (hope / HOPEMAX) * permawidth;
 			time1 = this.game.time.now;
 		}
-		//console.log("hope %d", hope);
+		console.log("hope %d", hope);
 		
 		//this.game.physics.p2.collide(playerCG, wallsCG);//invalid function
 		
