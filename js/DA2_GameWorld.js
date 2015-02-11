@@ -25,7 +25,7 @@ RPGGame.GameWorld = function (game) {
 };
 
 var catfriend, map, layer0, layer1, layer2, walls, CollisionLayer, wallsCG, playerCG;
-var speed = 2, hope, HOPEMAX, courage, COURAGEMAX, hopebar, hopeback, hopefore;
+var speed = 200, hope, HOPEMAX, courage, COURAGEMAX, hopebar, hopeback, hopefore;
 var time1, cropbox;
 RPGGame.GameWorld.prototype = {
 	
