@@ -33,9 +33,9 @@ RPGGame.GameWorld.prototype = {
 		//this.game.world.setBounds(-4000, -4000, 8000, 8000);
 		this.game.physics.startSystem(Phaser.Physics.P2JS);
 		//this.game.physics.startSystem(Phaser.Physics.ARCADE);
-		//this.game.physics.p2.setImpactEvents(true);
-		//wallsCG = this.game.physics.p2.createCollisionGroup();
-		//playerCG = this.game.physics.p2.createCollisionGroup();
+		this.game.physics.p2.setImpactEvents(true);
+		wallsCG = this.game.physics.p2.createCollisionGroup();
+		playerCG = this.game.physics.p2.createCollisionGroup();
 		
 		map = this.game.add.tilemap('map');
 		map.addTilesetImage('stone_walls', 'stonewalls');
