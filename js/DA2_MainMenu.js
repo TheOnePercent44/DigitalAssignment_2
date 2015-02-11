@@ -40,7 +40,7 @@ RPGGame.MainMenu.prototype = {
 
 	},
 	
-	function actionOnClick () {
+	actiononClick: function() {
 		this.startGame();
 	}
 
