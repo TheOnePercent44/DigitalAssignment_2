@@ -38,10 +38,10 @@ RPGGame.MainMenu.prototype = {
 		//	And start the actual game
 		this.state.start('Game');
 
-	},
-	
-	actiononClick: function() {
-		this.startGame();
 	}
 
+};
+
+function actiononClick() {
+		this.startGame();
 };
