@@ -32,7 +32,7 @@ RPGGame.GameWorld.prototype = {
     create: function () {
 		this.music = this.add.audio('gameMusic', 1.5, true);
 		this.music.play();
-		//this.game.world.setBounds(-4000, -4000, 8000, 8000);
+		this.game.world.setBounds(-1000, -1000, 4000, 4000);//widenbounds for tilemap load?
 		//this.game.physics.startSystem(Phaser.Physics.P2JS);
 		this.game.physics.startSystem(Phaser.Physics.ARCADE);
 		/*this.game.physics.p2.setImpactEvents(true);
@@ -132,6 +132,13 @@ RPGGame.GameWorld.prototype = {
 		hopebar.scale.y = 0.5;
 		hopefore.scale.x = 0.5;
 		hopefore.scale.y = 0.5;
+		
+		hopeback.fixedToCamera = true;
+		hopebar.fixedToCamera = true;
+		hopefore.fixedToCamera = true;
+		hopeback.cameraOffset.setTo(this.game.camera.width*0.75, this.game.camera.height*0.07);
+		hopebar.cameraOffset.setTo(this.game.camera.width*0.75, this.game.camera.height*0.07);
+		hopefore.cameraOffset.setTo(this.game.camera.width*0.75, this.game.camera.height*0.07);
 		
 		/*courageback = this.game.add.sprite(this.game.camera.width*0.5, this.game.camera.height*0.07, 'barback');
 		couragebar = this.game.add.sprite(courageback.x, courageback.y, 'courage');
