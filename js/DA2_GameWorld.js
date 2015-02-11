@@ -364,7 +364,7 @@ function gainCat(player, cat) {
 	//cat = new follower?
 
 	//Restore Hope and/or Courage
-	hope += 40;
+	hope += 25;
 	if(hope > HOPEMAX)
 		hope = HOPEMAX;
 	
