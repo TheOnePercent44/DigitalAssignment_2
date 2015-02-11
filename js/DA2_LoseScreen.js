@@ -19,10 +19,15 @@ RPGGame.LoseScreen = function (game) {
 
 RPGGame.LoseScreen.prototype = {
 	create: function () {
-		var text = this.game.add.text(this.game.world.centerX*0.3, this.game.world.centerY*0.75, "Congratulations!", { font: "65px Arial", fill: "#FFFFFF", align: "center" });
+		var text = this.game.add.text(this.game.world.centerX*0.35, this.game.world.centerY*0.75, "Despair has claimed you!", { font: "65px Arial", fill: "#FFFFFF", align: "center" });
 	},
 
 	update: function () {
 		//return to menu somehow
+		this.game.input.onDown.addOnce(this.returnToMenu, this);
+	},
+	
+	returnToMenu: function(){
+		this.state.start('MainMenu');
 	}
 };
